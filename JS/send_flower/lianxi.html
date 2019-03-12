@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>送礼物——代理人</title>
+</head>
+<body>
+    <script>
+    const xwt={
+        name:"徐文韬",
+        age:21,
+        hobbies:["打游戏","睡觉"],
+
+        sendPresent(target){
+            target.receivePresent();
+        }
+
+    };
+    const sjy={
+        name:"邵嘉云",
+        age:22,
+        hobbies:["看书","听歌"],
+        Angervalue:90,
+
+        receivePresent(){
+            if(sjy.Angervalue>50){
+                console.log("滚，我不想看到你");
+            }
+                else{
+                    console.log("哇，好喜欢这个礼物，爱你韬韬");
+
+                }
+            },
+        angerValue(fn){
+            console.log("收到了礼物");
+            setTimeout(function(){
+                sjy.Angervalue=40;
+                console.log("他是我的小宝贝，我不能生他气");
+                 fn();
+
+            },3000)
+        }
+
+    };
+    const wlm={
+        name:"王丽敏",
+        age:21,
+        hobbies:["看电影","学习"],
+        receivePresent(){
+            sjy.angerValue(function(){
+                sjy.receivePresent();
+                
+        });
+       
+           
+        }
+
+            
+        
+    };
+        
+        
+    </script>
+    
+</body>
+</html>
