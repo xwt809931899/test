@@ -11,13 +11,17 @@ function Player(name){
     // this 指向实例化后的对象
     // console.log(this);node 
     this.name = name;
+    this.enemy = null;
 }   
 Player.prototype.win = function(){
     console.log(this.name + "上线了");
-}               //
+}               
 Player.prototype.lose = function(){
     console.log(this.name + "上线了");
+player1.enemy = player2;
+player2.enemy = player1;
 }               //给类添加属性定义给类添加属性定义
+
 
 
 // 将类实例化 类是一个抽象抽象概念， 对象可以new 出来
