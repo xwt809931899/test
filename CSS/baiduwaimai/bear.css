@@ -19,9 +19,12 @@ body{
     );
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    z-index: 10;
 }
 .view.proload{
     background-color: #ffebeb;
+    z-index: 11;
+     transition: transform .3s; 
 }
 .load-logo-c{
     width: 100%;
@@ -44,8 +47,55 @@ body{
     position: absolute;
     left: 4.75rem;
     top: 0;
+    animation: rideDrive 1s 0s linear forwards;
     
 }
+@keyframes rideDrive{
+    0%{
+        transform: translate3d(0,0,0);
+    }
+    4%{
+        transform: translate3d(0,-.125rem,0);
+    }
+    8%{
+        transform: translate3d(0,0,0,);
+    }
+    16%{
+        transform: translate3d(-.4rem,-.125rem,0);
+
+    }
+    24%{
+        transform: translate3d(-.8rem,0,0);
+    }
+    32%{
+        transform: translate3d(-1.2rem,-1.25rem,0);
+    }
+    40%{
+        transform: translate3d(-1.6rem,0,0);
+    }
+    48%{transform:translate3d(-2rem,-.125rem,0rem)
+    }
+    56%{transform:translate3d(-2.4rem,0rem,0rem)
+    }
+    64%{transform:translate3d(-2.8rem,-.125rem,0rem)
+    }
+    72%{transform:translate3d(-3.2rem,0rem,0rem)
+    }
+    80%{
+      transform:translate3d(-3.6rem,-.125rem,0rem)
+    }
+    88%{
+      transform:translate3d(-4rem,0rem,0rem)
+    }
+    96%{
+      transform:translate3d(-4.4rem,-.125rem,0rem)
+    }
+    100%{
+      transform:translate3d(-4.8rem,0rem,0rem)}
+    }
+  
+
+
 .process-c{
     width: 6.25rem;
     height: 0.245rem;
@@ -61,6 +111,6 @@ body{
     float: right;
     width: 25%;
     border-radius:  .2rem;
-    transition:  .9s;
+    transition:  1s;
 
 }

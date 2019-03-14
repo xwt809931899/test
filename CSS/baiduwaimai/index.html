@@ -20,13 +20,20 @@
             </div>
             <div class="process-txt"></div>
         </div>
+        <div id="next">下一屏</div>
+
     </div>
-    <div class="view">
+    <div class="view index">
         第二屏
     </div>
     <script>
         let width = 10
     const process=document.querySelector('.process-v');
+    const next = document.getElementById('next');
+    next.addEventListener('click',()=>{
+        const viewProload = document.querySelector('.view.proload');
+        viewProload.style.transform = 'translate3d(0,' + -100 + '%,0)';
+    })
     let interval=setInterval(() =>{
         //width = width + 10
         width +=10;
