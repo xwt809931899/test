@@ -63,3 +63,6 @@ html,body{
 .mr{
     margin: 0 0.4rem 0 0.4rem
 }
+.active{
+    border-color: blue !important;
+  }
