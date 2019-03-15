@@ -17,4 +17,4 @@ const hongbao = (total,num) =>{
     
 
 }
-console.log(hongbao(20,47));
+console.log(hongbao(100,10));
