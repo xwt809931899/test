@@ -49,6 +49,7 @@
         }
 
         .feed-content .photos {
+
             display: flex;
             margin-bottom: 10px;
         }
@@ -60,11 +61,19 @@
 
         .feed-content .photos .aside {
             flex: 1;
-        } 
-        .feed-item .feed-content p{
+        }
+
+        .count {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
+
+        .feed-item .feed-content p {
             display: -webkit-box;
-            overflow:hidden;
-            -webkit-line-clamp:2;
+            overflow: hidden;
+            -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
         }
     </style>
@@ -87,12 +96,14 @@
                     </div>
                     <div class="aside-pic">
                         <div style="position:relative;
-                            background:url(https://img3.doubanio.com/view/photo/l/public/p2549554495.jpg) center center / cover no-repeat rgb(250,250,250);">
-                            <div style="padding-top:100%;"></div>
+                            background-color: aqua; height: 79.58px;">
+                            <div style="padding-top:100%;">
+
+                                <div class="count">141+</div>
+
+                            </div>
                         </div>
-                        <div class="more-pic">
-                            <span class="count">141+</span>
-                        </div>
+
                     </div>
                 </div>
             </div>
