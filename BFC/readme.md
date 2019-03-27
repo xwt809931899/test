@@ -11,4 +11,4 @@ Block ForBatting Context(块级格式上下文)
 2. float的值不为none
 3. 行内块inline-block
 4. 表格单元display：table-cell
-5. 绝对定位的属性（absolute,fixed
+5. 绝对定位的属性（absolute,fixed）
