@@ -12,7 +12,7 @@
         this.planet = planet;
     }
     Animal.prototype.getPlanet = function(){
-        return this.planet;
+            console.log(this.planet);
     }
     function Person(name){
         this.name = name;
@@ -25,6 +25,7 @@
         return this.name;
     }
     var person = new Person("杨帅");
+    person.getPlanet();
     </script>
 </body>
 </html>

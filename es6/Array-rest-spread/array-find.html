@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // const ages = [
+    //     18,20,30,40
+    // ];
+    // const this_age = ages.find((age) => age > 20);
+
+    // const this_age_filter = ages.filter((age) => age >20 );
+
+    // const this_age_index = ages.findIndex((age) => age > 20);
+    // console.log( this_age, this_age_index,this_age_filter);
+    const a = [
+        {
+            name:'李雷',age:30
+        },
+        {
+            name:'李雷1',age:30
+        },
+        {
+            name:'李雷2',age:30
+        },
+        {
+            name:'李雷3',age:12
+        }
+    ]
+    const this_a_filter = a.filter((age) => age.age >18); //数组输出
+    const this_a_every = a.every((age) => age.age > 18); //有一项不满足就是false
+    const this_a_some = a.some((age) => age.age > 18);  //有一项满足就行
+    console.log(this_a_every,this_a_some,this_a_filter);
+
+    </script>
+</body>
+</html>

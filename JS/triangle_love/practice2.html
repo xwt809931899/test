@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function Person(name){
+        this.name=name;
+    }
+    function Nmsl(cxk){
+        this.cxk=cxk;
+    }
+    Nmsl.prototype.getMother = function (){
+        console.log(this.cxk);
+    }
+    // var cxknmsl = new Nmsl('你妈死了蔡徐坤');
+    
+    Person.prototype = new Nmsl('你妈死了蔡徐坤');
+
+    var person = new Person('蔡徐坤');
+
+    person.getMother();
+
+    
+    
+    
+    </script>
+</body>
+</html>
