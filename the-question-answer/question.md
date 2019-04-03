@@ -13,8 +13,11 @@
 ```
 ```html
 <body>
-  <div class="box box1"></div>   //box1的高度为78px 宽度为98px
-  <div class="box box2"></div>   //box2的高度为100px 宽度为100px
+  <div class="box box1"></div>   盒子模型 box1.width:100px    box1.height:100px+20px = 120px
+  <div class="box box2"></div>   盒子模型 box2.width:100px+2px*2=104px   box2.height:100px
+  +20px+20px+2px*2 = 144px
+                                 盒子实际大小 box1.width:100px  box1.height:100px
+                                 盒子实际大小 box2.width:104pqx  box2.height:124px
 </body>
 ```
 
