@@ -1,6 +1,10 @@
 $font_color_white = #fff
 html,body
   width 100%
+.flex
+  display flex
+.flex1
+  flex 1
 .nav
   height 1.067rem
   font-size 18px
@@ -71,6 +75,7 @@ html,body
       .movie-container
         position relative
         z-index 1
+        overflow hidden
         .movie-cover
           float left
           width 2.854rem
@@ -116,3 +121,69 @@ html,body
               .rating-score
                 font-size .48rem
                 color #ffc600
+          .movie-detail
+              font-size 12px
+              margin-bottom 0.16rem
+              opacity 0.7
+              p
+                margin-bottom 0.14rem
+      .operating
+        margin-top 0.5rem
+        div
+          border 1px solid rgba(255,255,255,.4)
+          background-color  rgba(255,255,255,.4)
+          font-size 14px
+          color $font_color_white
+          position relative
+          z-index 2
+          text-align center
+          padding 0.25rem 0
+          border-radius 4px
+          img
+            vertical-align middle
+          span
+            vertical-align middle
+        .movie-watch
+          margin-right 0.3rem
+          img
+            width 14px
+            height 14px
+        .movie-mark
+          img
+            width 18px
+            height 18px
+  .section-seperate
+    padding-top 0.4rem
+    margin-bottom 0.3rem
+    border-top 1px solid #e5e5e5
+  .section-expander
+    padding-left 0.4rem
+    padding-right 0.4rem
+    .text-expander
+      .text-expander_content.close
+        min-width 65px
+        display -webkit-box
+        overflow hidden
+        text-overflow ellipsis
+        word-break break-all
+        -webkit-box-orient vertical
+        -webkit-line-clamp 3
+      .text-expander_button
+        height 0.7rem
+        text-align center
+        .icon-chevron_down
+          width 10px
+          height 10px
+          border 1px solid #aaaaaa
+          display inline-block
+          border-width 0  1px 1px 0
+          transform rotate(45deg)
+          transition transform 0.5s
+        .icon-chevron_down.up
+          transform rotate(-135deg)
+
+
+
+
+#toast
+  display none

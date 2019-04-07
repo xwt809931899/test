@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // const a = {
+    //     name:'徐文韬',
+    //     age:'21'
+    // }
+    // const b = `我叫${a.name},今年${a.age}`
+    // const c = '我叫' + a.name + ',' + '今年' + a.age + '岁';
+
+    // console.log(c);
+    const arr = [
+    {name: 'ECUT', good: false},
+    {name: '江财', good: true},
+    {name: '南师', good: true}];
+
+    const newarr = arr.map( (ele) => {
+         ele.good = ele.good ? '真好' : '爱国荣校';
+         return `<li>${ele.name}${ele.good}</li>`
+        
+    })
+    console.log(newarr);
+    
+</script>
+
+</body>
+</html>

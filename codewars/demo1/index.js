@@ -13,13 +13,26 @@
     
 
 // }
-function generateHashtag(str){
-    return (str.length > 140 || str === '') ? false : '#' + str.split(' ').map(capitalize).join(' ');
+// function generateHashtag(str){
+//     return (str.length > 140 || str === '') ? false : '#' + str.split('').map(capitalize).join(' ');
   
-}
-function capitalize(w){
-    // console.log(w);
-    return w.charAt(0).toUpperCase() + w.slice(1); 
-}
-console.log(generateHashtag('How are you'));
+// }
+// function capitalize(w){
+//     // console.log(w);
+//     return w.charAt(0).toUpperCase() + w.slice(1); 
+// }
+// console.log(generateHashtag('hoe are you'));
 // console.log(a('How are you'));
+function rightString (str) {
+    if(str.length > 140){
+        return false;
+    }
+    if(str === ''){
+        return false;
+    }
+
+    return str = '#' + str.split(' ').map( (w) => {
+        return w.charAt(0).toUpperCase() + w.slice(1);
+    } ).join(' ');
+}
+console.log(rightString('how are you'));

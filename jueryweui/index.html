@@ -60,9 +60,9 @@
             $.ajax({    /**/
                 url: 'https://api.douban.com/v2/movie/top250',          /*执行请求服务器的操作，去获得服务器的地址*/
                 type: 'get',
-                timeout: '3000',
+                // timeout: '3000',                      超时时间设置 单位毫秒
                 dataType: 'jsonp',                               /*jsonp可以请求跨域，但只有get方法才能用jsonp*/
-                success: function (response) {
+                success: function (response) {          /*请求成功的回调函数*/
                     // console.log(response.subjects);    /*问服务器拿的数据就是这个参数*/
                     // var a = response.subjects.map(ele => ele.title);
                     // console.log(a);
