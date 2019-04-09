@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var xhr = null
+    if (window.XMLHttpRequest) {
+        xhr = new XMLHttpRequest()
+    }
+    else {
+        xhr = new ActiveXObject("Microsoft.XMLHTTP")
+    }
+    xhr.open("get","mock.json",true)  //true是异步 false是同步
+    xhr.setRequestHeader("Content-type","application/x-www-form-urllencoded")
+    xhr.send()
+    // console.log(xhr.responseText)
+    // console.log(xhr.readyState,xhr.status)
+    //如果是异步 就要回调函数
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status ==200) {
+            console.log(xhr.responseText)
+            console.log(666)
+        }
+    }
+    //异步需要时间 所以666先异步函数打印
+    // console.log(666)
+    // 重点：如何解决异步的问题
+    </script>
+</body>
+</html>
