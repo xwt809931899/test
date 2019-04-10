@@ -22,14 +22,17 @@
     // console.log(xhr.readyState,xhr.status)
     //如果是异步 就要回调函数
     xhr.onreadystatechange = function () {
-        if (xhr.readyState == 4 && xhr.status ==200) {
+        if (xhr.readyState == 4 && xhr.status == 200) {
             console.log(xhr.responseText)
-            console.log(666)
+            
         }
+        
     }
+    // console.log(666)
     //异步需要时间 所以666先异步函数打印
     // console.log(666)
     // 重点：如何解决异步的问题
+    //因为js是单线程 所以会产生异步问题
     </script>
 </body>
 </html>
