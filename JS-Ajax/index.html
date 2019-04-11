@@ -21,18 +21,65 @@
     // console.log(xhr.responseText)
     // console.log(xhr.readyState,xhr.status)
     //如果是异步 就要回调函数
-    xhr.onreadystatechange = function () {
+    var p = new Promise ((resolve,reject) => {
+        xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
             console.log(xhr.responseText)
+            resolve(xhr.responseText)
             
         }
         
     }
+
+    })
+    //  xhr.onreadystatechange = function () {
+    //      if (xhr.readyState == 4 && xhr.status == 200) {
+    //         console.log(xhr.responseText)
+            
+    //     }
+        
+    //  }
+    function xq () {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+            console.log('猛哥要相亲了')
+             resolve('')
+        },1000)
+        })
+       
+    }
+    // xq();
+    function marry() {
+        return new Promise ((resolve) => {
+            setTimeout(() => {
+            console.log('猛哥要结婚了')
+            resolve('想生孩子')
+        },500)
+        })
+      
+        
+    }
+    function a () {
+        setTimeout(() => {
+            console.log('生孩子')
+        }, 200);
+    }
+    p
+         .then(xq)
+         .then(marry)
+         .then(a)
+           
+         
+    //     })
+        // .catch((err) =>{
+        //     console.log('猛哥要单身')
+        // })
     // console.log(666)
     //异步需要时间 所以666先异步函数打印
     // console.log(666)
     // 重点：如何解决异步的问题
     //因为js是单线程 所以会产生异步问题
+    // Promise.all([p,xq()]).then(marry).catch((err) => {console.log(err)})
     </script>
 </body>
 </html>
