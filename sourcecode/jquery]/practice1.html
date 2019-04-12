@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <img src="https://pic.36krcnd.com/201904/09061934/9axl9yt10w5w6kq6!heading" alt="" onload="imgLoaded();">
+    <script>
+    
+        window.onload = function () {
+            console.log('页面加载完成')
+        }
+
+        function imgLoaded () {
+        console.log('图片加载完成')
+        }
+
+        // document.addEventListener('DOMContentLoaded',function () {
+        //     console.log('DOM READY');
+        // })
+        function JQuery (ele) {
+            this.ele = ele
+        }
+        JQuery.prototype.html = function (str) {
+            this.ele.innerHTML = str
+        }
+
+        function $ (selector) {
+            if(typeof selector === 'function'){
+                document.addEventListener('DOMContentLoaded',selector)
+            }
+            else if(typeof selector === 'string'){
+                const ele = document.querySelector(selector)  
+                return new JQuery(ele)
+            }
+        }
+        $(function () {
+             console.log('DOM READY')
+             $('#root').html('我要去云南')
+         })
+         
+    
+    
+    
+    
+    </script>
+</body>
+</html>

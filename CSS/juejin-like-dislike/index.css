@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+.container{
+    width: 960px;
+    margin: 0 auto;
+}
+html{
+    font-size: 12px;
+}
+.item{
+    border: 1px solid #edeeef;
+    color: #b3b2c2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 80px;
+}
+.active{
+    color: #6cbd45;
+}

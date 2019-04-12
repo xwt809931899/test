@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>订阅发布者模式</title>
+    <style>
+    html, body{
+        height: 100%;
+    }
+    
+    </style>
+</head>
+<body>
+    <script>
+        // listener 收听者es callback   发布者document.body
+        // 注册事件 事件的回调函数的执行
+    // document.body.addEventListener('click',function() {
+    //     alert('111')
+    // },false)
+    // document.body.addEventListener('click',function() {
+    //     alert('222')
+    // },false)
+    // document.body.addEventListener('click',function() {
+    //     alert('333')
+    // },false)
+    let ys = {
+        name:'杨帅',
+        yz:100
+        };  //发布者
+    ys.peoplelist = []; //储存订阅者的地方
+    ys.listen = function (fn) {
+        this.peoplelist.push(fn)
+    }
+    ys.trigger = function () {
+       for (var i =0, fn; fn = this.peoplelist[i++];){
+        fn.call(this,'今晚有空，可以去看复联4');
+       }
+    }
+    ys.listen(function (msg) {
+        console.log(`想听${this.name} ${msg}`);
+    })
+    ys.listen(function (msg) {
+        console.log(`想看${this.name} ${msg}`);
+    })
+    ys.listen(function (msg) {
+        console.log(`想和${this.name} ${msg}`);
+    })
+    // console.log(ys.peoplelist.length)
+    // console.log(ys.trigger)
+
+    // 先形成他们之间的关系 订阅者
+    setTimeout(() => {
+        ys.trigger();
+    },3000)
+
+    
+    
+    </script>
+</body>
+</html>
