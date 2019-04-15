@@ -24,28 +24,30 @@
 
 
     }
-    console.log(obj.getName());
+    // console.log(getName2.call(obj))
+   // window.myName = 'sss'
+    //console.log(obj.getName());
     var getName2 = obj.getName;  //没带括号代表不运行 是一个函数体  得到的是一个方法   生成期
-    // console.log(getName2)
+    //console.log(getName2)
     // this丢失问题
-    // console.log(getName2());  //运行方式  this指向全局
-
-//     var getId = function (id) {
+   // console.log(getName2());  //运行方式  this指向全局
+    console.log(getName2.call(obj))   //除了可以给window.myname赋值，还可以用call方法将this指向obj对象，以此来解决this丢失问题
+//      var getId = function (id) {
 //         return document.getElementById(id)
-//     }
+//      }
 
-// console.log(getId('div1'));
-// var getId = document.getElementById;
-// console.log(getId('div1'))     this丢失  不在指向document 所以报错
+//  console.log(getId('div1'));
+//var getId = document.getElementById;
+//console.log(getId('div1'))     //this丢失  不在指向document 所以报错
 
-document.getElementById = (function (func) {   //重新被return后的函数覆盖 重新定义
-    return function() {
-        return func.apply(document,arguments);
-    }
+ document.getElementById = (function (func) {   //重新被return后的函数覆盖 重新定义
+     return function() {
+         return func.apply(document,arguments);
+     }
 
-})(document.getElementById);  //立即执行函数是创建闭包的最佳手段  闭包可以让函数运行时找到它定义时的变量
-var getId = document.getElementById;
-console.log(getId('div1'))
+ })(document.getElementById);  //立即执行函数是创建闭包的最佳手段  闭包可以让函数运行时找到它定义时的变量
+ var getId = document.getElementById;
+ console.log(getId('div1'))
 
     
     
