@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Hobbies (hobbiesone,hobbiestwo,bobbiesthree) {
+            this.hobbiesone = '唱';
+            this.hobbiestwo = '跳';
+            this.bobbiesthree = 'rap';
+        }
+        function Cxk (tip,name,hobbiesone,hobbiestwo,bobbiesthree) {
+            this.name = name;
+            this.tip = '全名制作人，偶像练习生';
+            Hobbies.apply(this,arguments);
+        }
+        const cxk = new Cxk ('全名制作人，偶像练习生cxk','蔡徐坤','唱','跳','rap');
+        console.log(cxk.tip,cxk.name,cxk.hobbiesone,cxk.hobbiestwo,cxk.bobbiesthree)
+        // console.log(cxk.hobbiestwo)
+        
+        
+        
+    </script>
+</body>
+</html>
