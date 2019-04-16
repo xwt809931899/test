@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,12 +12,14 @@
     <link rel="stylesheet" href="./css.css">
     <title>Document</title>
 </head>
+
 <body>
     <header class="nav">
         <i class="arrow-left"></i>
         <span>影片详情</span>
     </header>
     <div class="page">
+        <!-- section1 -->
         <section class="movie-header">
             <div class="movie">
                 <div class="movie-background"></div>
@@ -70,6 +73,7 @@
                 </div>
             </div>
         </section>
+        <!-- section2 -->
         <section class="section-seperate section-expander">
             <div class="text-expander" id="text-expander">
                 <div class="text-expander_content close">
@@ -80,80 +84,133 @@
                 </div>
             </div>
         </section>
+        <!-- section3 -->
+        <section class="section-seperate">
+            <p class="action-list section-til">演职人员</p>
+            <ul class="movie-celebrities">
+                <!-- <li>
+                    <a href="#" class="link">
+                        <div class="movie-celebrities__pic">
+                            <img src="" alt="">
+                        </div>
+                        <span class="movie-celebrities-nick">rer</span>
+                        <span class="movie-celebrities-roles">sda</span>
+                    </a>
+                </li> -->
+            </ul>
+        </section>
+        <!-- section4 -->
+        <section class="movie-booking section-seperate section-expander">
+            <p class="section-til">票房</p>
+            <div class="weui-flex">
+                <div class="weui-flex_item">
+                    <div class="placeholder" id="ranking">
+                        <span></span>
+                        <p>昨日票房排行</p>
+                    </div>
+                </div>
+                <div class="weui-flex_item">
+                    <div class="placeholder" id="bookingWeek">
+                        <span></span>
+                        <p>首周票房(万)</p>
+                    </div>
+                </div>
+                <div class="weui-flex_item">
+                    <div class="placeholder" id="bookingTotal">
+                        <span></span>
+                        <p>累计票房(万)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
         <div id="toast">
             <div class="weui-mask_transparent"></div>
             <div class="weui-toast">
-              <i class="weui-icon-success-no-circle weui-icon_toast"></i>
-              <p class="weui-toast__content">已标记为想看</p>
+                <i class="weui-icon-success-no-circle weui-icon_toast"></i>
+                <p class="weui-toast__content">已标记为想看</p>
             </div>
-          </div>
+        </div>
     </div>
     <script>
-    (function(){
-        $.ajax({
-            url: 'https://easy-mock.com/mock/5ca2c29464930718b239eb94/lm/lvmeng/myMovie-demo',
-            type: 'get',
-            success:function(res){
-                console.log(res);
-                $('#moviePic').attr('src','./images/header-bg.jpg');
-                $('.movie-name').html(res.data.name);
-                $('.movie-ename').html(res.data.nameEnglish);
-                star(res.data.star);
-                $('.score-num span').html(res.data.people);
-                $('.rating-score').html(res.data.grade);
-                $('.movie-type').html(res.data.type);
-                $('.address').html(res.data.where);
-                $('.data').html(res.data.date);
-                $('.text-expander_content p').html(res.data.desc);
-                
+        (function () {
+            $.ajax({
+                url: 'https://easy-mock.com/mock/5ca2c29464930718b239eb94/lm/lvmeng/myMovie-demo',
+                type: 'get',
+                success: function (res) {
+                    console.log(res);
+                    $('#moviePic').attr('src', './images/header-bg.jpg');
+                    $('.movie-name').html(res.data.name);
+                    $('.movie-ename').html(res.data.nameEnglish);
+                    star(res.data.star);
+                    $('.score-num span').html(res.data.people);
+                    $('.rating-score').html(res.data.grade);
+                    $('.movie-type').html(res.data.type);
+                    $('.address').html(res.data.where);
+                    $('.data').html(res.data.date);
+                    $('.text-expander_content p').html(res.data.desc);
+                    for (let n of res.data.person)
+                        $('.section-seperate .movie-celebrities').append(`<li>
+                    <a href="#" class="link">
+                        <div class="movie-celebrities__pic">
+                            <img src="${n.avatal}" alt="">
+                        </div>
+                        <span class="movie-celebrities-nick">${n.name}</span>
+                        <span class="movie-celebrities-roles">${n.sort}</span>
+                    </a>
+                </li>`)
+                    $('#ranking span').html(res.data.booking.ranking);
+                    $('#bookingWeek span').html(res.data.booking.bookingWeek);
+                    $('#bookingTotal span').html(res.data.booking.bookingTotal);
 
+
+
+                }
+            })
+            function star(e) {
+                var num = Math.floor(e);
+                if (e > num) {
+                    $('#rating').prepend('<img class="img", src="./images/star-h.png">')
+                }
+                for (let i = 0; i < num; i++) {
+                    $('#rating').prepend('<img class="img", src="./images/star.png">')
+                }
 
             }
-        })
-        function star (e) {
-            var num = Math.floor(e);
-             if(e>num){
-                 $('#rating').prepend('<img class="img", src="./images/star-h.png">')
-             }   
-            for(let i = 0; i < num; i++ ){
-                $('#rating').prepend('<img class="img", src="./images/star.png">')
-            }
 
-        }
+            $('#movie-watch').click(function () {
+                if ($('#movie-watch').hasClass('active')) {
+                    $('#movie-watch').removeClass('active');
+                    $('#movie-watch img').attr('src', './images/heart1.png');
+                    $('.weui-toast__content').html('已标记为想看');
+                }
+                else {
+                    $('#movie-watch').addClass('active');
+                    $('#movie-watch img').attr('src', './images/heart.png');
+                    $('.weui-toast__content').html('已取消标记为想看');
+                }
+                $('#toast').css('display', 'block')
+                setTimeout(() => {
+                    $('#toast').css('display', 'none');
+                }, 1500)
+            })
 
-        $('#movie-watch').click(function () {
-            if($('#movie-watch').hasClass('active')){
-                $('#movie-watch').removeClass('active');
-                $('#movie-watch img').attr('src','./images/heart1.png');
-                $('.weui-toast__content').html('已标记为想看');
-            }
-            else{
-                $('#movie-watch').addClass('active');
-                $('#movie-watch img').attr('src','./images/heart.png');
-                $('.weui-toast__content').html('已取消标记为想看');
-            }
-            $('#toast').css('display','block')
-            setTimeout( () => {
-                $('#toast').css('display','none');
-            } ,1500)
-        })
+            $('#text-expander').click(function () {
+                if ($('.text-expander_content').hasClass('close')) {
+                    $('.text-expander_content').removeClass('close');
+                    $('.icon-chevron_down').addClass('up');
+                }
+                else {
+                    $('.icon-chevron_down').removeClass('up');
+                    $('.text-expander_content').addClass('close');
 
-        $('#text-expander').click( function () {
-            if($('.text-expander_content').hasClass('close')){
-                $('.text-expander_content').removeClass('close');
-                $('.icon-chevron_down').addClass('up');
-            }
-            else{
-                $('.icon-chevron_down').removeClass('up');
-                $('.text-expander_content').addClass('close');
-    
-            }
-        })
+                }
+            })
 
 
-    })()
-    
-    
+        })()
+
+
     </script>
 </body>
+
 </html>
