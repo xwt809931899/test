@@ -40,13 +40,16 @@
             var rect
             if(!item.dataset.original) return;
             rect = item.getBoundingClientRect()
-            if (rect.bottom >= 0 && rect.top < viewHeight) {         //出现在可视区域内
+            if (rect.top >= 0 && rect.bottom < viewHeight) {         //出现在可视区域内
                 !function () {   //立即执行函数
                 var img = new Image ()       //就能直接拿到一个img标签   不用createElement
                 img.src = item.dataset.original  //直接定义一个变量是不会有方法的 只有元素节点才有
                 img.onload = function () {
                     item.src = img.src
-                }
+                // item.src = item.dataset.original 
+                        
+            }
+
                 item.removeAttribute('data-original')
                 item.removeAttribute('lazyload')
             }()
