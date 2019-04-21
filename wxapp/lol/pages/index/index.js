@@ -53,7 +53,7 @@ Page({
   },
   bindFreeLegendTap: function(e){
     console.log('tapped');
-    wx.navigateTo({
+    wx.switchTab({
       url: "../legends/legends",
     })
   },

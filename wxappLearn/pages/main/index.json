@@ -1,3 +1,8 @@
 {
-  "usingComponents": {}
+  "usingComponents": {},
+    "navigationBarBackgroundColor": "#4169E1",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "文文韬韬",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light"
 }

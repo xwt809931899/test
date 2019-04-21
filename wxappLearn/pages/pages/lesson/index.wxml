@@ -1,7 +1,7 @@
 <!--pages/lesson/index.wxml-->
 <view>
     <!-- aaaaa -->
-    <block wx:for="{{lessons}}" wx:for-item="{{lesson}}">
+    <block wx:for="{{lessons}}" wx:for-item="lesson">
         <text>{{lesson.name}}</text>
     </block>
 </view>

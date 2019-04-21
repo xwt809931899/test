@@ -11,5 +11,19 @@
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
   },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "pages/images/shouye.png",
+      "selectedIconPath": "pages/images/hover-shouye.png"
+    },
+    {
+      "pagePath": "pages/legends/legends",
+      "text": "英雄",
+      "iconPath": "pages/images/class.png",
+      "selectedIconPath": "pages/images/hover-class.png"
+    }]
+  },
   "sitemapLocation": "sitemap.json"
 }

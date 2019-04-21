@@ -1,2 +1,2 @@
 <!--pages/main/index.wxml-->
-<text>pages/main/index.wxml</text>
+<view class="jumpPage" bindtap='bindJumpTap'>跳转一下</view>

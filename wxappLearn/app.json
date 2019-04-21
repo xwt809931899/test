@@ -7,18 +7,21 @@
   "window": {
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#48A6FA",
-    "navigationBarTitleText": "任天堂",
-    "navigationBarTextStyle": "white"
+    "navigationBarTitleText": "Mykirito",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
+
   },
-  "tabBar":{
-    "color": "#515151",
+  "tabBar": {
+    "borderStyle": "black",
     "backgroundColor": "#fff",
-    "list":[
+    "color": "#8B008B",
+    "list": [
       {
-        "pagePath":"pages/main/index",
-        "text":"首页",
-        "iconPath":"pages/images/shouye.png",
-        "selectedIconPath":"pages/images/hover-shouye.png"
+        "pagePath": "pages/main/index",
+        "text": "首页",
+        "iconPath": "pages/images/shouye.png",
+        "selectedIconPath": "pages/images/hover-shouye.png"
       },
       {
         "pagePath": "pages/lesson/index",

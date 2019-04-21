@@ -47,7 +47,9 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    console.log(6)
+    wx.startPullDownRefresh({
+      
+    })
   },
 
   /**
@@ -62,5 +64,11 @@ Page({
    */
   onShareAppMessage: function () {
     console.log(8)
+  },
+  bindJumpTap:function () {
+    console.log('tap')
+    wx.navigateTo({
+      url: '../pages/lesson/index',
+    })
   }
 })
