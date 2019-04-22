@@ -5,7 +5,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+      array:[
+        {
+          mode: 'scaleToFill',
+          text: 'scaleToFill'
+        }
+      ],
+      src:"pages/images/b.jpg",
   },
 
   /**
@@ -71,4 +77,6 @@ Page({
       url: '../pages/lesson/index',
     })
   }
+
+
 })
