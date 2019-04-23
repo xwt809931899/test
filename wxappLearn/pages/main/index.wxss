@@ -10,3 +10,6 @@
 .other-button-hover {
   background-color: blue;
 }
+image{
+  width: 100%;
+}

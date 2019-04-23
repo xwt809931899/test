@@ -5,14 +5,25 @@ Page({
    * 页面的初始数据
    */
   data: {
-      array:[
-        {
-          mode: 'scaleToFill',
-          text: 'scaleToFill'
-        }
-      ],
-      src:"pages/images/b.jpg",
-  },
+  //     array:[
+  //       {
+  //         mode: 'scaleToFill',
+  //         text: 'scaleToFill'
+  //       }
+  //     ],
+  //     src:"pages/images/b.jpg",
+        // people: [
+        //   {name:"卓威"},
+        //   {name:"杨帅"},
+        //   {name:"金荣"}
+         
+        // ]
+        imgUrls: [
+          'https://wx2.sinaimg.cn/mw1024/79354417ly1g2bv1yo0asj20u00ws79k.jpg',
+          'https://wx2.sinaimg.cn/mw1024/79354417ly1g2bv1yo0asj20u00ws79k.jpg',
+          'https://wx2.sinaimg.cn/mw1024/79354417ly1g2bv1yo0asj20u00ws79k.jpg'
+        ]
+    },
 
   /**
    * 生命周期函数--监听页面加载
