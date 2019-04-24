@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+          city:"南昌",
   //     array:[
   //       {
   //         mode: 'scaleToFill',
@@ -19,17 +20,28 @@ Page({
          
         // ]
         imgUrls: [
-          'https://wx2.sinaimg.cn/mw1024/79354417ly1g2bv1yo0asj20u00ws79k.jpg',
-          'https://wx2.sinaimg.cn/mw1024/79354417ly1g2bv1yo0asj20u00ws79k.jpg',
-          'https://wx2.sinaimg.cn/mw1024/79354417ly1g2bv1yo0asj20u00ws79k.jpg'
+          'https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640',
+          'https://images.unsplash.com/photo-1551214012-84f95e060dee?w=640',
+          'https://images.unsplash.com/photo-1551446591-142875a901a1?w=640'
+
         ]
     },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    console.log(1)
+  onLoad: function (options) {    //this作用域在整个page里
+    let that = this;    //让this的作用域保存下来  因为在回调函数success里this的作用域会被修改
+    wx.request({
+      url: 'https://www.easy-mock.com/mock/5ca458094767c3737055c8f8/example/xwt',
+      success:function (res) {
+        console.log(res)
+        that.setData({       //动态的在Page里的data加上了items:[]
+          items:res.data.data.movieList
+        })
+      }
+
+    })
   },
 
   /**
@@ -64,9 +76,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    wx.startPullDownRefresh({
-      
-    })
+   console.log(1234)
   },
 
   /**
