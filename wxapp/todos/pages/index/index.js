@@ -48,8 +48,7 @@ Page({
         id:new Date().getTime(),
         status:0
         },
-        ...this.data.todos
-      ],
+        ...todos],
       addShow:false,
       addText:'',
       focus:false
@@ -73,9 +72,16 @@ Page({
     console.log(e);
     // this.data.userInfo = e.detail.userInfo;
     // this.data.hasUserInfo = true;
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
+       this.setData({
+       userInfo: e.detail.userInfo,
+       hasUserInfo: true
+      })
   }
 })
+
+
+//几个问题   
+//1.if () {} return; 和 if () {};  else () {}; 有没有区别
+//if括号里面的非语句 是不是存不存在 
+//数据存在默认初始值 点击事件里修改了数据里的值，使他不再是初始值，那么当这个事件结束了，数据里的值是保持修改后
+
