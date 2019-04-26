@@ -1,0 +1,5 @@
+export const API_BASE = 'https://www.easy-mock.com/mock/5ca458094767c3737055c8f8/example/ttt'
+export const API_DETAIL = 'https://www.easy-mock.com/mock/5ca4585b4767c3737055c943/example/sdd'
+export const API_CREATE = 'https://www.easy-mock.com/mock/5af03ac5957fd4308a30b9c0/api/create#!method=get'
+export const API_DELETE_IMG = 'https://www.easy-mock.com/mock/5af03ac5957fd4308a30b9c0/api/delete_img#!method=delete'
+export const API_LOGIN = 'https://www.easy-mock.com/mock/5af03ac5957fd4308a30b9c0/api/login#!method=post'
