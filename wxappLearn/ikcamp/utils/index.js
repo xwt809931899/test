@@ -17,7 +17,7 @@ let util = {
         })
     },
     setStorageData(key, value='',cb) {
-        wx.setStorageData({
+        wx.setStorage({
             key:key,
             data:value,
             success() {
@@ -26,15 +26,15 @@ let util = {
         })
     },
     getStorageData(key,cb) {
-        wx.getStorageData({
+        wx.getStorage({
             key:key,
             success(res) {
-                cb && cb(res.data)
+                cb && cb(res.data)            //cb这个方法有啥用？   
             }
         })
     },
     request(opt) {
-        let {url,data,header,method,dataType,mock = false} = opt;
+        let {url,data,header,method,dataType,mock = false} = opt; //let url = opt.url,...,let mock = opt.mock || false
         let self = this;
         return new Promise((resolve,reject) => {
             if(mock) {
