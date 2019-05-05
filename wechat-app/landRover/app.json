@@ -1,0 +1,33 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/stories/index",
+    "pages/vehicles/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "汽车",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#000",
+    "borderStyle": "white",
+    "backgroundColor": "#ededed",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/index/index",
+        "iconPath": "assets/icons/icons/home.png",
+        "selectedIconPath": "assets/icons/icons/home-active.png"
+      },
+      {
+        "text": "故事",
+        "pagePath": "pages/stories/index",
+        "iconPath": "assets/icons/icons/event.png",
+        "selectedIconPath": "assets/icons/icons/event-active.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}
