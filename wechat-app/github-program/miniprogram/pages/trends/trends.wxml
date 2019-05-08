@@ -1,0 +1,4 @@
+<!--miniprogram/pages/trends/trends.wxml-->
+<view class='trends'>
+<trend repo='{{item}}' wx:for="{{ trends }}" wx:key="{{ index }}"></trend>       <!--自定义的组件  repo 传参  index 是下标 唯一属性-->
+</view>

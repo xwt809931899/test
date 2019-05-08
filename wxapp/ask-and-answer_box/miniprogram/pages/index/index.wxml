@@ -1,0 +1,21 @@
+<view class='container'>
+<view class='content'>
+<view class='image'>
+<image src='../../images/announcement.png' />
+<!-- <text class="assit">11111111111111</text> -->
+<text class='announcement'>公告栏</text>
+</view>
+<view class='assit'></view>
+<view class='text-content'>
+<text>朋友，欢迎您的到来╰(*°▽°*)╯</text>
+<view class='edit'>
+<view class='edit-image'>
+<image src='../../images/edit1.png'></image>
+</view>
+<view class='edit-button'>
+编辑
+</view>
+</view>
+</view>
+</view>
+</view>
