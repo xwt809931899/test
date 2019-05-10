@@ -7,13 +7,19 @@
 </view>
 <view class='assit'></view>
 <view class='text-content'>
-<text>朋友，欢迎您的到来╰(*°▽°*)╯</text>
-<view class='edit'>
+<text>{{addText}}</text>
+<view class='edit {{editting ? "hide" : ""}}' bindtap='switchToInput'>
 <view class='edit-image'>
 <image src='../../images/edit1.png'></image>
 </view>
-<view class='edit-button'>
-编辑
+</view>
+</view>
+<view class='toInput {{isShow ? "" : "hide"}}'>
+<view class='toInput-div'>
+<input type='text' class='weui-input' placeholder='想告诉大家什么？' value='{{addText}}' bindinput='setInput' focus='{{focus}}' />
+<view class='toInput-btn'>
+<button class='weui-btn mini-btn' bindtap='addInput' type='warn' size='mini'>确定</button>
+<button class='weui-btn mini-btn' bindtap='addInputHide'  size='mini'>取消</button>
 </view>
 </view>
 </view>

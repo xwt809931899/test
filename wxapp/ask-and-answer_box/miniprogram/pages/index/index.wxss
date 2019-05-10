@@ -11,6 +11,7 @@
   /* padding: 20rpx; */
   transition: .5s all;
   position: relative;
+  padding-bottom:40rpx;  
 }
 .image{
   width: 500rpx;
@@ -64,29 +65,53 @@ image{
 
 }
 .text-content text{
-  color: #ccc;
+  color: black;
 
 }
 .edit{
-  width: 200rpx;
-  position: relative;
-  top: 52.8%;
-  left: 71.5%;
-  
-}
-.edit .edit-image{
-  height: 50rpx;
-  position: absolute;
   width: 100rpx;
-  z-index: 1;
-  left: -40%;
-  top: -20%;
-
-}
-.edit .edit-image image{
-  width:100%;
   height: 100rpx;
+  position: absolute;
+  top:36%;
+  left: 75%;
 
 }
+.edit.hide{
+  display: none;
+}
+.edit .edit-image {
+  position: absolute;
+  left: 0;
+}
+.toInput{
+   position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 99;
+}
+.toInput.hide{
+   display: none;
+}
+.toInput .toInput-div {
+  background: #fff;
+  padding: 30rpx;
+}
+.toInput .toInput-div .weui-input {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5rpx 20rpx;
+  font-size: 12pt;
+  margin-bottom: 10rpx;
+}
+.toInput .toInput-div .toInput-btn button {
+  margin: 0 auto;
+  width: 30%;
+
+}
+
+
 
 
