@@ -1,0 +1,16 @@
+<view class='container'>
+<view class='userinfoAndContentTextAndButton'>
+<view class='userinfo'>
+<view class='userinfo-image'>
+<image src='../../images/mine.jpg'/>
+</view>
+<view class='userinfo-name'>
+<text>文文韬韬文文文文问 :</text>
+</view>
+<view class='wen'><image src='../../images/wen.png'/></view>
+</view>
+<view class='contentText'>
+<text>{{question}}</text>
+</view>
+</view>
+</view>

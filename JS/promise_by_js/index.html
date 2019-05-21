@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src='./promise.js'></script>
+    <script>
+        var a = 0
+         new Sjy((resolve) => {
+            setTimeout(() => {
+                 a = 1
+                resolve(a)
+            },1000)
+            
+        
+        })
+        .then(() => {
+                console.log(a)
+            })
+
+        //setTimeout本身就是一个异步
+    </script>
+</body>
+</html>

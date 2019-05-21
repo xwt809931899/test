@@ -1,0 +1,67 @@
+/* miniprogram/pages/detail/detail.wxss */
+page{
+  background-color: #ADD8E6;
+  position: relative;
+}
+.container{
+  height: 100%;
+}
+.container .userinfoAndContentTextAndButton{
+  height: 100%;
+  width:90%;
+  background-color: 		#F0FFFF;
+  border-radius:38rpx;
+  margin: 40rpx auto;
+  padding: 25rpx;
+  position: relative;
+}
+.container .userinfoAndContentTextAndButton .userinfo{
+  height: 100rpx;
+  position: relative;
+}
+
+.container .userinfoAndContentTextAndButton .userinfo .userinfo-image{
+  height: 80rpx;
+  width: 80rpx;
+  display: inline-block;
+}
+.container .userinfoAndContentTextAndButton .userinfo .userinfo-image image{
+  height: 80rpx;
+  width: 80rpx;
+  border-radius: 50%;
+}
+.container .userinfoAndContentTextAndButton .userinfo .userinfo-name{
+  display: inline-block;
+  height: 100rpx;
+  position: absolute;
+  top: 17rpx;
+  left: 93rpx;
+  
+}
+.container .userinfoAndContentTextAndButton .userinfo .userinfo-name text{
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp:1;
+  -webkit-box-orient: vertical;
+
+}
+.container .userinfoAndContentTextAndButton .userinfo .wen{
+  display: inline-block;
+  height: 80rpx;
+  width: 80rpx;
+  position:absolute;
+  left:47%;
+  top:-28rpx;
+
+}
+.container .userinfoAndContentTextAndButton .userinfo .wen image{
+  height: 50rpx;
+  width: 50rpx;
+}
+.container .answer{
+  height: 100%;
+  width:90%;
+  border-radius:38rpx;
+  margin: 130rpx auto;
+  padding: 25rpx;
+}

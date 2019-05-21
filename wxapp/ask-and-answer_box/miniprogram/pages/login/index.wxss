@@ -1,5 +1,8 @@
 /* miniprogram/pages/login/index.wxss */
 /* miniprogram/pages/index/index.wxss */
+page{
+  background-color: #F0FFFF;
+}
 .header{
   margin: 90rpx 0 90rpx 50rpx;
   border-bottom: 1px solid #ccc;

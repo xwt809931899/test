@@ -1,3 +1,5 @@
+const db = wx.cloud.database();
+const userinfos = db.collection('userinfos');
 Page({
 
   /**
@@ -20,7 +22,7 @@ Page({
           wx.getUserInfo({
             success(res) {
               // that.queryUserInfo();
-              wx.navigateTo({
+              wx.switchTab({
                 url: '../index/index',
               })
             }
@@ -28,12 +30,29 @@ Page({
         }
       }
     })
+    userinfos
+      .add({
+        data: {
+       
+          avatarUrl: '',
+          gender: '',
+          nickName: '',
+          notice: "公告栏不能为空，一定要编辑哦^_^",
+          followed: [],
+          follower: [],
+          mark: [],
+          score: 0
+        }
+      })
+      .then(res => {
+        console.log(res)
+      })
   },
   getUserInfo: function (e) {
     if (e.detail.userInfo) {
       //用户按了允许授权按钮
       //授权成功后，跳转进入小程序首页
-      wx.navigateTo({
+      wx.switchTab({
         url: '../index/index'
       })
     } else {
@@ -50,6 +69,7 @@ Page({
         }
       })
     }
+   
   },
 
 

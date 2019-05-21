@@ -1,0 +1,192 @@
+/* miniprogram/pages/shouye/shouye.wxss */
+.container{
+  /* background-color: #ccc */
+}
+.container .navigationBar{
+  width: 100%;
+  height: 155rpx;
+  padding-top: 78rpx;
+  box-sizing: border-box;
+  padding-left: 38rpx;
+
+
+}
+.container .head{
+  width: 100%;
+  height: 100rpx;
+  border-bottom: 1px solid #d7d7da;
+  border-top: 1px solid #d7d7da;
+  background-color: #f0f0f3;
+  box-sizing: border-box;
+
+
+}
+.container .head .input{
+  width: 80%;
+  height: 60rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  margin-left:28rpx;
+  background-color: #ffffff;
+  position: relative;
+}
+.container .head .input.hide{
+  display: none;
+}
+.container .head .input input{
+  height: 100%;
+  display: inline-block;
+  font-size: 30rpx;
+  color: #9b9b9b;
+  width: 100%;
+  padding-left: 66rpx;
+
+}
+.container .head .input .search-image{
+  width: 60rpx;
+  height: 60rpx;
+  display: inline-block;
+  position: absolute;
+  top: 9%;
+  left: 3%;
+}
+.container .head .input .search-image image{
+  width: 35rpx;
+  height: 35rpx;
+}
+.container .head .input .button{
+  display: inline-block;
+  width: 100rpx;
+  height: 100%;
+  color: #00a15f;
+  position: absolute;
+  top: 6%;
+  left: 104%;
+}
+
+
+
+.container .head .search{
+  width: 93%;
+  height: 60rpx;
+  margin: 20rpx auto;
+  background-color: #ffffff;
+  position: relative;
+}
+.container .head .search.hide{
+  display: none;
+}
+.container .head .search .search-image{
+  width: 60rpx;
+  height: 60rpx;
+  display: inline-block;
+  position: absolute;
+  top: 17%;
+  left: 41%;
+
+
+}
+.container .head .search .search-image image{
+  width: 35rpx;
+  height: 35rpx;
+}
+.container .head .search .search-text{
+  display: inline-block;
+  height: 60rpx;
+  top: 25%;
+  position: absolute;
+  font-size: 30rpx;
+  left: 48%;
+  color: #9b9b9b;
+
+  
+}
+.container .subject{
+  margin-top: 25rpx;
+  margin-left: 50rpx;
+  width: 100%;
+  height: 165rpx;
+  position: relative;
+  margin-bottom: 20rpx;
+
+
+}
+.container .subject .subject-image{
+  width: 275rpx;
+  height: 100%;
+  display: inline-block;
+}
+.container .subject .subject-image image{
+  width: 100%;
+  height: 100%;
+}
+
+.container .subject .subject-content{
+  display: inline-block;
+  height: 100%;
+  width: 473rpx;
+  position: absolute;
+  top: 0%;
+  padding-left: 25rpx;
+}
+.container .subject .subject-content .subject-name{
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp:1;
+  -webkit-box-orient: vertical;
+  font-size: 35rpx;
+  font-weight: bold;
+  width: 90%;
+}
+.container .subject .subject-content .subjectAuthorAndNum{
+  width: 100%;
+  padding-top: 26rpx;
+  font-size: 32rpx;
+  color: #727272;
+}
+.container .subject .subject-content .subjectAuthorAndNum .subject-author{
+  display: inline-block;
+}
+.container .subject .subject-content .subjectAuthorAndNum .subject-num{
+  display: inline-block;
+  padding-left: 10rpx;
+}
+.container .subject .subject-content .subject-price .nowPrice{
+  display: inline-block;
+  color: #dc4642;
+  font-size: 32rpx;
+  font-weight: bold;
+
+}
+.container .subject .subject-content .subject-price .price{
+  display: inline-block;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #888888;
+  padding-left: 18rpx;
+  text-decoration: line-through;
+
+  
+}
+.container .subject .subject-content .subject-price .price.hide{
+  display: none;
+}
+.container .subject .subject-content .subject-price .price .discount{
+  display: inline-block;
+  color: #ec403c;
+  font-size: 20rpx;
+  box-sizing: border-box;
+  border: 1px solid #ec403c;
+  margin-left: 18rpx;
+
+
+  
+}
+.container .subject .subject-content .subject-price .price .discount.hide{
+  display: none;
+}
+
+
+
+
+

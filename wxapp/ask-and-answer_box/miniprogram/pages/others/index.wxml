@@ -1,0 +1,75 @@
+<!-- 公告栏以及编辑 -->
+<view class='container' wx:if='{{has_openid}}'>
+
+  <view class='content {{todisappear ? "tohide" : "" }}'>
+    <view class='image'>
+      <view class='image_box'>
+        <image src='../../images/announcement.png' />
+      </view>
+      <text class='announcement'>公告栏</text>
+    </view>
+    <view class='text-content'>
+      <text>{{addText}}</text>
+    </view>
+  </view>
+
+  <view class='ask-view {{todisappear ? "dohide" : "" }}'>
+    <view class='input-view'>
+      <textarea class='input' placeholder='输入你想问的问题吧' auto-focus='true'></textarea>
+    </view>
+    <button bindtap=''>发送提问</button>
+  </view>
+
+
+  <view class='appear {{todisappear ? "" : "dohide"}}'>
+    <image bindtap='toAppear' src='../../images/appear.png' />
+  </view>
+
+
+  <view class='disappear {{todisappear ? "dohide" : ""}}'>
+    <image bindtap='toDisappear' src='../../images/disappear.png' />
+  </view>
+
+
+  <!-- 提的问以及跳转链接 -->
+  <view class='main' wx:if='{{hasInformation}}'>
+    <view class='question-card' wx:for='{{askInformation}}' wx:key='{{index}}'>
+      <view class='backgroud'>
+        <image src='../../images/b.jpg' />
+      </view>
+      <view class='userinfoAndPass'>
+        <view class='userinfo'>
+          <view class='userinfo-image'>
+            <!-- 头像Url -->
+            <image src='{{item.imgUrl}}' />
+          </view>
+          <view class='userinfo-name'>
+            <!-- 用户名 -->
+            <text>{{item.nickName}} :</text>
+          </view>
+        </view>
+      </view>
+      <view class='contentAndDetail'>
+        <view class='contentText'>
+          <!-- 问题内容 -->
+          <text>{{item.question}}</text>
+        </view>
+        <view class='detail'>
+          <image src='../../images/detail.png' bindtap='toAnswer' />
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+  <block wx:else>
+    <view class='none'>
+      <text>快来第一个提问吧^o^</text>
+    </view>
+  </block>
+
+</view>
+<view class='no_openid' wx:else>
+  <icon type='waiting' size='100'></icon>
+  <view class='notice'>请扫别人的码提问</view>
+</view>
