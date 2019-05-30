@@ -8,19 +8,15 @@ Page({
     isTouch:false,
     addText:'',
     focus:false,
-    // shouye:[{
-    //   subjectImage:"https://live-static.segmentfault.com/433/883/433883449-5cd805b77fa07_render",
-    //   subjectName: "redux完全指南 系列1：从入门到精通",
-    //   author:"starkwang ",
-    //   num: "·30",
-    //   nowPrice:"￥19.00",
-    //   price:"￥148.00",
-    //   isSale:true,
-    //   discount:'立省129.00元'
-
-
-    // }],
     isSale:false
+  },
+  toNavigate (e) {
+    let id = e.currentTarget.dataset.id
+    console.log(e)
+    wx.navigateTo({
+     
+      url: `/pages/next/next?id=${id}`,
+    })
   },
   toBack() {
     this.setData({

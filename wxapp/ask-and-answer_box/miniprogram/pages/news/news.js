@@ -56,8 +56,9 @@ Page({
   },
   toRead() {
     wx.navigateTo({
-      url: '/pages/detail/detail',
+      url: '/pages/answer/answer',
     })
+
   },
 
   /**

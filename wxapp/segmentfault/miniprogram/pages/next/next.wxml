@@ -1,0 +1,30 @@
+<!--miniprogram/pages/next/next.wxml-->
+ <view class='container'>
+ <view class='navigationBar'>
+<view class='navigationBarTextTitle'>
+<text>思否讲堂</text>
+</view>
+</view>
+<view class='main' wx:for='{{detail}}' wx:key='{{index}}'>
+<view class='subject-image'><image src='{{item.subjectImage}}'/></view>
+<view class='subjectNameAndInformation'>
+<view class='subject-name'><text>{{item.subjectName}}</text></view>
+<view class='subject-price'>
+<view class='nowPrice'><text>{{item.nowPrice}}</text></view>
+<view class='price'><text>{{item.price}}</text></view>
+<view class='discount'><text>{{item.discount}}</text></view>
+</view>
+<view class='subjectInformation'>
+<view class='subjects'><text>系列课程</text></view>
+<view class='time'><text>{{item.time}} 课时</text></view>
+<view class='number'><text>{{item.number}} 人学习</text></view>
+</view>
+</view>
+</view>
+<view class='border'></view>
+<view class='tabBar'>
+<view class='tabBar-one {{curIndex === index ? "on" : ""}}' data-id='1' data-index='1' bindtap='toNavigateToTabBarOne'><text>课程列表</text></view>
+<view class='tabBar-two {{curIndex === index ? "on" : ""}}' data-id='2' data-index='2' bindtap='toNavigateToTabBarTwo'><text>课程简介</text></view>
+<view class='tabBar-three {{curIndex === index ? "on" : ""}}' data-id='3' data-index='3' bindtap='toNavigateToTabBarThree'><text>讲师介绍</text></view>
+</view>
+ </view>

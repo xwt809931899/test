@@ -58,7 +58,7 @@
 <view class='contentText'>
 <text>{{item.question}}</text>
 </view>
-<view class='date'><text>{{item.date}}</text></view>
+<view class='date'><text>{{date}}</text></view>
 <view class='detail'>
 <image src='../../images/detail.png' bindtap='toAnswer'/>
 </view>

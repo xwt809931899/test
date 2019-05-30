@@ -1,0 +1,104 @@
+/* miniprogram/pages/next/next.wxss */
+.container .navigationBar{
+  width: 100%;
+  height: 155rpx;
+  padding-top: 78rpx;
+  box-sizing: border-box;
+  padding-left: 85rpx;
+}
+.container .main .subject-image{
+  height: 400rpx;
+  background-color: #000000;
+  padding-top: 10rpx;
+
+}
+.container .main .subject-image image{
+  height: 390rpx;
+}
+.container .main .subjectNameAndInformation{
+  padding: 30rpx;
+}
+.container .main .subjectNameAndInformation .subject-name{
+  font-size: 40rpx;
+}
+.container .main .subjectNameAndInformation .subject-price{
+  margin-left: -3rpx;
+  font-size: 32rpx;
+}
+.container .main .subjectNameAndInformation .subject-price .nowPrice{
+  display: inline-block;
+  color: #dc4642;
+  font-weight: bold;
+  margin-right: 20rpx;
+}
+.container .main .subjectNameAndInformation .subject-price .price{
+  display: inline-block;
+  font-weight: bold;
+  color: #888888;
+  text-decoration: line-through;
+  margin-right: 20rpx;
+}
+.container .main .subjectNameAndInformation .subject-price .discount{
+  display: inline-block;
+  font-size: 20rpx;
+  border: 1px solid #ec403c;
+  box-sizing: border-box;
+  color: #ec403c;
+  
+}
+.container .main .subjectNameAndInformation .subjectInformation{
+  font-size: 32rpx;
+}
+.container .main .subjectNameAndInformation .subjectInformation .subjects{
+  color:  #727272;
+  display: inline-block;
+  margin-right: 20rpx;
+}
+.container .main .subjectNameAndInformation .subjectInformation .time{
+  color: #000000;
+  display: inline-block;
+  margin-right: 310rpx;
+}
+.container .main .subjectNameAndInformation .subjectInformation .number{
+  display: inline-block;
+  color: #727272;
+
+}
+.container .border{
+  width: 100%;
+  height: 15rpx;
+  background-color: #f4f4f4;
+}
+.container .tabBar{
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  border-bottom: 1px solid #cccccc;
+  font-size: 33rpx;
+  align-items: center;
+  padding-left: 113rpx;
+  /* box-sizing: border-box; */
+  position: relative;
+}
+.container .tabBar .tabBar-one{
+  display: inline-block;
+  flex: 1;
+  
+}
+.container .tabBar .tabBar-one.on{
+  border-bottom: 2px solid #19af17;
+  color: #16b015;
+  position: absolute;
+  bottom: 0;
+
+
+  
+}
+.container .tabBar .tabBar-two{
+  display: inline-block;
+  flex: 1;
+}
+.container .tabBar .tabBar-three{
+  display: inline-block;
+  flex: 1;
+}

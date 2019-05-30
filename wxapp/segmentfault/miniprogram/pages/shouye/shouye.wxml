@@ -1,7 +1,7 @@
 <view class='container'>
 <view class='navigationBar'>
 <view class='navigationBarTextTitle'>
-<text>所有课程</text>
+<text>我参与的讲堂</text>
 </view>
 </view>
 <view class='head'>
@@ -23,7 +23,7 @@
 </view>
 </view>
 </view>
-<view class='subject' wx:for='{{shouye}}' wx:key="{{index}}">
+<view class='subject' wx:for='{{shouye}}' wx:key="{{index}}" bindtap='toNavigate' data-id='{{item.id}}'>
 <view class='subject-image'>
 <image src='{{item.subjectImage}}'/>
 </view>

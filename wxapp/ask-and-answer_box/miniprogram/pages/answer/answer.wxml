@@ -1,5 +1,32 @@
 <!--miniprogram/pages/answer/answer.wxml-->
-<view class='container'>
+<view class='container' wx:if='{{id == "_openid"}}'>
+<view class='userinfoAndContentTextAndButton'>
+<view class='userinfo'>
+<view class='userinfo-image'>
+<image src='../../images/mine.jpg'/>
+</view>
+<view class='userinfo-name'>
+<text>文文韬韬文文文文问 :</text>
+</view>
+<view class='wen'><image src='../../images/wen.png'/></view>
+</view>
+<view class='contentText'>
+<text>{{question}}</text>
+</view>
+<view class='button'>
+<view class='notCollection {{isCollection ? "hide" : ""}}'>
+<image src='../../images/collection.png' bindtap='toCollection'/>
+</view>
+<view class='Collection {{isCollection ? "" : "hide"}}'>
+<image src='../../images/collectioned.png' bindtap='notCollection'/>
+</view>
+<view class='time'><text>{{time}}</text></view>
+<view class='date'><text>{{date}}</text></view>
+</view>
+</view>
+</view>
+<!-- wx:if和wx:else的分界线 -->
+<view class='container' wx:else>
 <view class='userinfoAndContentTextAndButton'>
 <view class='userinfo'>
 <view class='userinfo-image'>
@@ -23,6 +50,7 @@
 <view class='reply'>
 <image src='../../images/reply.png' bindtap='toReply' />
 </view>
+<view class='time'><text>{{time}}</text></view>
 </view>
 </view>
 <view class='answer {{isReply ? "" : "hide"}}' style='background-color:{{isSend ? "#00BFFF" : "#F0FFFF"}};margin:{{isChange ? "130rpx auto" : "40rpx auto"}};'>
@@ -35,6 +63,8 @@
 <view class='answerText'>
 <text>{{addText}}</text>
 </view>
+<view class='date'><text>{{date}}</text></view>
+<view class='time'><text>{{time1}}</text></view>
 </view>
 </view>
 <view class='all {{isAnswer ? "" : "hide"}}'>
@@ -43,7 +73,7 @@
 <image src='../../images/back.png' bindtap='hideInput'/>
 </view>
 <view class='input'>
-<input focus='{{focus}}' value='{{addText}}' bindinput='toInput' type='text' cursor-spacing='16'/>
+<input focus='{{focus}}' value='{{addText}}' bindinput='toInput' type='text' cursor-spacing='16' maxlength='-1'/>
 </view>
 <view class='send'>
 <image src='../../images/send.png' bindtap='toSend'/>

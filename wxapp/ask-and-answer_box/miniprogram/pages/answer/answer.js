@@ -14,7 +14,13 @@ Page({
     addText:'',
     isReply:false,
     isSend:false,
-    isChange:false
+    isChange:false,
+    time:'0:29',
+    date:'2019-05-22',
+    time1:'0:53',
+    id:'',
+    date:'2019-05-23'
+
 
   },
   toSend() {
@@ -38,7 +44,7 @@ Page({
         // })
         .update({
         data:{
-          answer:this.data.addText
+          answer: this.data.addText
         }
       })
         .then(res => {
@@ -60,7 +66,7 @@ Page({
   toInput (e) {
     console.log(e)
     this.setData({
-      addText:e.detail.value,
+      addText: e.detail.value,
       isReply:true,
       isChange:true,
       isSend:false
@@ -127,7 +133,7 @@ Page({
         console.log(res)
         this.setData({
           question: res.data[7].question.split("").join(" "),
-          addText:res.data[7].answer
+          addText: res.data[7].answer
         })
         if(this.data.addText.length != 0) {
           this.setData({

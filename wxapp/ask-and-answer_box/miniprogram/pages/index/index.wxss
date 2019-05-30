@@ -280,6 +280,13 @@ image{
   -webkit-box-orient: vertical; 
 
 }
+.main .question-card .contentAndDetail .date{
+  /* width: 200rpx; */
+  height: 50rpx;
+  font-size: 30rpx;
+  padding-top: 42rpx;
+  padding-left: 25rpx;
+}
 .main .question-card .contentAndDetail .detail{
   width: 50rpx;
   height: 50rpx;

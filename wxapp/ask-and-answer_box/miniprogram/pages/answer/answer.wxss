@@ -65,11 +65,26 @@ page{
   margin: 130rpx auto;
   padding: 25rpx;
 }
+.container .answer .answerText{
+  margin-bottom: 25rpx;
+  height: 100%;
+}
 .container .answer .answerText text{
   word-break: break-all;
+  text-align: justify;
+  /* letter-spacing: -0.12em; */
 }
 .container .answer.hide{
   display: none;
+}
+.container .answer .date{
+  display: inline-block;
+  font-size: 30rpx;
+  margin-right: 460rpx;
+}
+.container .answer .time{
+  display: inline-block;
+  font-size: 30rpx;
 }
 .container .answer .answer-userinfo{
    height: 100rpx;
@@ -164,6 +179,19 @@ page{
   width: 50rpx;
   height: 50rpx;
 }
+.container .userinfoAndContentTextAndButton .button .time{
+  width: 200rpx;
+  position: absolute;
+  bottom: 0;
+  left: 45%;
+  font-size: 30rpx;
+}
+.container .userinfoAndContentTextAndButton .button .date{
+  position: absolute;
+  bottom: 30rpx;
+  left: 75%;
+  font-size: 30rpx;
+}
 .container .userinfoAndContentTextAndButton .button .reply{
   width: 50rpx;
   height: 50rpx;
@@ -216,6 +244,7 @@ page{
 }
 .input-bottom .input input{
   padding-left: 25rpx;
+
   
 }
 .input-bottom .send{
