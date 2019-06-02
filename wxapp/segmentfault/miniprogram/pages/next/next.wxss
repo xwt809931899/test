@@ -72,33 +72,125 @@
 .container .tabBar{
   width: 100%;
   height: 100rpx;
-  display: flex;
   border-bottom: 1px solid #cccccc;
   font-size: 33rpx;
+  display: flex;
   align-items: center;
-  padding-left: 113rpx;
   /* box-sizing: border-box; */
-  position: relative;
+  /* position: relative; */
+  margin-bottom: 60rpx;
 }
 .container .tabBar .tabBar-one{
   display: inline-block;
   flex: 1;
+  height: 100%;
+  position: relative;
+  box-sizing: border-box;
+  margin-left: 10rpx;
   
 }
 .container .tabBar .tabBar-one.on{
+  display: inline-block;
+  flex: 1;
+  height: 100%;
+  position: relative;
   border-bottom: 2px solid #19af17;
+  box-sizing: border-box;
+  margin-left: 10rpx;
   color: #16b015;
+}
+.container .tabBar .tabBar-one text{
+  top: 50%;
+  left: 50%;
   position: absolute;
-  bottom: 0;
+  transform:translate(-50%,-50%);
+  font-size: 32rpx;
 
 
-  
 }
 .container .tabBar .tabBar-two{
   display: inline-block;
   flex: 1;
+  height: 100%;
+  position: relative;
+}
+.container .tabBar .tabBar-two.on{
+  display: inline-block;
+  flex: 1;
+  height: 100%;
+  position: relative;
+  border-bottom: 2px solid #19af17;
+  box-sizing: border-box;
+  color: #16b015;
+}
+.container .tabBar .tabBar-two text{
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform:translate(-50%,-50%);
+  font-size: 32rpx;
 }
 .container .tabBar .tabBar-three{
   display: inline-block;
   flex: 1;
+  height: 100%;
+  position: relative;
+  box-sizing: border-box;
+  margin-right: 10rpx;
 }
+.container .tabBar .tabBar-three.on{
+  display: inline-block;
+  flex: 1;
+  height: 100%;
+  position: relative;
+  border-bottom: 2px solid #19af17;
+  box-sizing: border-box;
+  color: #16b015;
+}
+.container .tabBar .tabBar-three text{
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform:translate(-50%,-50%);
+  font-size: 32rpx;
+}
+.container .subject-detail{
+  /* height: 100rpx; */
+  padding-left:30rpx;
+  padding-right:30rpx;
+  position: relative;
+  margin-bottom: 25rpx;
+
+}
+.container .subject-detail .image{
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  right: 30rpx;
+  top: 25rpx;
+}
+.container .subject-detail .image image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.container .subject-detail .chapter-name{
+  font-size: 35rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp:1;
+  -webkit-box-orient: vertical;
+  width: 90%;
+}
+.container .subject-detail .timeAndNum{
+  padding-top: 22rpx;
+  font-size: 30rpx;
+  color: #727272;
+}
+.container .subject-detail .timeAndNum .time{
+  display: inline-block;
+  margin-right: 14rpx;
+}
+.container .subject-detail .timeAndNum .num{
+  display: inline-block;
+}
+

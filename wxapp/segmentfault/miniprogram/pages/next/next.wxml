@@ -23,8 +23,16 @@
 </view>
 <view class='border'></view>
 <view class='tabBar'>
-<view class='tabBar-one {{curIndex === index ? "on" : ""}}' data-id='1' data-index='1' bindtap='toNavigateToTabBarOne'><text>课程列表</text></view>
-<view class='tabBar-two {{curIndex === index ? "on" : ""}}' data-id='2' data-index='2' bindtap='toNavigateToTabBarTwo'><text>课程简介</text></view>
-<view class='tabBar-three {{curIndex === index ? "on" : ""}}' data-id='3' data-index='3' bindtap='toNavigateToTabBarThree'><text>讲师介绍</text></view>
+<view class='tabBar-one {{isOn1 ? "on" : ""}}' bindtap='toNavigateToTabBarOne'><text>课程列表</text></view>
+<view class='tabBar-two {{isOn2 ? "on" : ""}}' bindtap='toNavigateToTabBarTwo'><text>课程简介</text></view>
+<view class='tabBar-three {{isOn3 ? "on" : ""}}' bindtap='toNavigateToTabBarThree'><text>讲师介绍</text></view>
+</view>
+<view class='subject-detail' wx:for="{{subjectDetail}}">
+<view class='image'><image src='../../images/suo.png'/></view>
+<view class='chapter-name'><text>{{item.chapterName}}</text></view>
+<view class='timeAndNum'>
+<view class='time'><text>{{item.time}}</text></view>
+<view class='num'><text>{{item.num}}</text></view>
+</view>
 </view>
  </view>

@@ -15,9 +15,45 @@ Page({
         time:15,
         number:34,
         id:1
+      },
+  
+    ],
+    isOn1:false,
+    isOn2: false,
+    isOn3: false,
+    subjectDetail:[
+      {
+        chapterName:"01.【redux完全指南 系列：从入门到会用】课程介绍",
+        time:'2分钟',
+        num: '· 38人学过'
+      },
+      {
+        chapterName: "01.【redux完全指南 系列：从入门到会用】课程介绍",
+        time: '2分钟',
+        num: '· 38人学过'
+      },
+      {
+        chapterName: "01.【redux完全指南 系列：从入门到会用】课程介绍",
+        time: '2分钟',
+        num: '· 38人学过'
+      },
+      {
+        chapterName: "01.【redux完全指南 系列：从入门到会用】课程介绍",
+        time: '2分钟',
+        num: '· 38人学过'
+      },
+      {
+        chapterName: "01.【redux完全指南 系列：从入门到会用】课程介绍",
+        time: '2分钟',
+        num: '· 38人学过'
+      },
+      {
+        chapterName: "01.【redux完全指南 系列：从入门到会用】课程介绍",
+        time: '2分钟',
+        num: '· 38人学过'
       }
+
     ]
-    
     
   },
 
@@ -30,7 +66,10 @@ Page({
     console.log(nextDetail)
     if(nextDetail) {
       this.setData({
-        detail:[nextDetail]
+        detail:[nextDetail],
+        isOn1:true,
+        isOn2:false,
+        isOn3:false
       })
     }
     else {
@@ -42,6 +81,30 @@ Page({
         icon:'none'
       })
     }
+
+
+  },
+  toNavigateToTabBarOne () {
+    this.setData({
+      isOn1: true,
+      isOn2: false,
+      isOn3: false
+    })
+    
+  },
+  toNavigateToTabBarTwo () {
+    this.setData({
+      isOn1: false,
+      isOn2: true,
+      isOn3: false
+    })
+  },
+  toNavigateToTabBarThree() {
+    this.setData({
+      isOn1: false,
+      isOn2: false,
+      isOn3: true
+    })
   },
 
   /**
