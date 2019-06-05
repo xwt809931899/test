@@ -27,12 +27,27 @@
 <view class='tabBar-two {{isOn2 ? "on" : ""}}' bindtap='toNavigateToTabBarTwo'><text>课程简介</text></view>
 <view class='tabBar-three {{isOn3 ? "on" : ""}}' bindtap='toNavigateToTabBarThree'><text>讲师介绍</text></view>
 </view>
+<view class='include'>
 <view class='subject-detail' wx:for="{{subjectDetail}}">
 <view class='image'><image src='../../images/suo.png'/></view>
 <view class='chapter-name'><text>{{item.chapterName}}</text></view>
 <view class='timeAndNum'>
 <view class='time'><text>{{item.time}}</text></view>
 <view class='num'><text>{{item.num}}</text></view>
+</view>
+</view>
+</view>
+<view class='bottom-content'>
+<view class='flex1'>
+<view class='shouye'>
+<image src='../../images/shouye.png'/>
+</view>
+<view class='share'>
+<image src='../../images/share.png'/>
+</view>
+</view>
+<view class='flex2'>
+<text>立即购买</text>
 </view>
 </view>
  </view>

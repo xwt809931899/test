@@ -1,5 +1,7 @@
 {
   "dependencies": {
-    "babel-plugin-transform-object-rest-spread": "^6.26.0"
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "iview": "^3.4.2",
+    "vue": "^2.6.10"
   }
 }

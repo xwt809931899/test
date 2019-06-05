@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <title>lifeCycle</title>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-model='message'>
+        <div class="text">{{message}}</div>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',          //指定要挂载的html节点
+            data() {
+                return {
+                    message: "帅哥"
+                }
+
+            },
+            beforeCreate() {
+                console.log('beforeCreate')
+            },
+            created() {
+                console.log('created')
+            },
+            //这个时候html还没有生成出来
+            beforeMount () {
+                console.log('beforeMount')
+            },
+            mounted () {
+                console.log('mounted')
+            },
+            beforeUpdate () {
+                console.log('beforeUpdate')
+            },
+            updated () {
+                console.log('updated')
+            },
+            beforeDestroy () {
+                console.log('beforeDestroy')
+            },
+            destroyed () {
+                console.log('destroyed')
+            }
+
+        })
+    </script>
+</body>
+
+</html>
