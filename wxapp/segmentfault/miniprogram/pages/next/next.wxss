@@ -48,7 +48,7 @@
   
 }
 .container .main .subjectNameAndInformation .subjectInformation{
-  font-size: 32rpx;
+  font-size: 30rpx;
 }
 .container .main .subjectNameAndInformation .subjectInformation .subjects{
   color:  #727272;
@@ -203,21 +203,55 @@
 }
 .container .bottom-content .flex1{
   flex: 1;
-  position: absolute;
-  z-index: 99;
+  background-color: #ffffff;
 }
 .container .bottom-content .flex1 .shouye{
   width: 50rpx;
   height: 50rpx;
   display: inline-block;
+  position: relative;
+  padding-top:12rpx;
+  padding-left:30rpx;
+
+
 }
 .container .bottom-content .flex1 .shouye image{
   width: 50rpx;
   height: 50rpx;
 }
+.container .bottom-content .flex1 .shouye .text{
+  position: absolute;
+  bottom: -35rpx;
+  left: 33rpx;
+}
+.container .bottom-content .flex1 text{
+  font-size: 20rpx;
+}
+.container .bottom-content .flex1 .share{
+  width: 50rpx;
+  height: 50rpx;
+  display: inline-block;
+  position: relative;
+  padding-left:65rpx;
+  padding-top:12rpx;
+
+
+}
+.container .bottom-content .flex1 .share image{
+  width: 50rpx;
+  height: 50rpx;
+}
+.container .bottom-content .flex1 .share .text{
+  position: absolute;
+  bottom: -33rpx;
+  left: 74rpx;
+
+
+}
 .container .bottom-content .flex2{
   flex: 1;
   background-color: #e5433f;
+  position: relative;
 }
 .container .bottom-content .flex1 .share{
   width: 50rpx;
@@ -227,5 +261,12 @@
 .container .bottom-content .flex1 .share image{
   width: 50rpx;
   height: 50rpx;
+}
+.container .bottom-content .flex2 .buy{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: #ffffff;
 }
 
