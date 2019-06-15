@@ -1,28 +1,33 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld/>
+  <div>
+    <counter/>
+    <!-- <counterBrother :count="count"/> -->
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
-
+// 两个兄弟组件,共享 count 数据
+// count 不应该属于Counter组件私有，data(){}，props
+import Counter from './components/Counter';
+// import CounterBrother from './components/CounterBrother';
 export default {
-  name: 'App',
+  data() {
+    return {
+      // count: 0
+    }
+  },
   components: {
-    HelloWorld
-  }
+    'counter': Counter,
+    // 'counterBrother': CounterBrother
+  },
+  methods: {
+    // incrementCount () {
+    //   this.count++;
+    // }
+  },
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
