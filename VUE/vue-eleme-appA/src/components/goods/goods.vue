@@ -23,6 +23,7 @@
             <h1 class="title">{{item.name}}</h1>
             <ul>
               <li
+                @click="selectFood(food, $event)"
                 v-for="(food,index) in item.foods"
                 :key="index"
                 class="food-item border-1px"
@@ -50,7 +51,12 @@
           </li>
         </ul>
       </div>
-      <shopcart ref="shopcart" :selectFoods="selectFoods" :deliveryPrice="seller.deliveryPrice" :minPrice="seller.minPrice"> </shopcart>
+      <shopcart 
+        ref="shopcart"
+        :selectFoods="selectFoods"
+        :deliveryPrice="seller.deliveryPrice"
+        :minPrice="seller.minPrice"
+      ></shopcart>
     </div>
   </div>
 </template>
@@ -85,16 +91,16 @@ export default {
       return 0
     },
     selectFoods () {
-      const foods = []
-      this.goods.forEach(good => good.foods.forEach(food => {
-        if (food.count) {
-          foods.push(food)
-        }
-        return foods
-        // console.log(foods)
-      }))
+      let foods = []
+      this.goods.forEach(good => {
+        good.foods.forEach(food => {
+          if (food.count) {
+            foods.push(food)
+          }
+        })
+      })
+      return foods
     }
-    
   },
   components: {
     cartcontrol,
@@ -108,6 +114,13 @@ export default {
       let foodList = this.$refs.foodList
       let el = foodList[index]
       this.foodsScroll.scrollToElement(el, 300)
+    },
+    selectFood (food, event) {
+      if (!event._constructed) {
+        return
+      }
+      this.selectFood = food
+      this.$refs.food.show()
     },
     addFood(target) {
       this._drop(target);
@@ -145,9 +158,9 @@ export default {
   created () {
     this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
 
-    this.$http.get('https://www.easy-mock.com/mock/5ca458024767c3737055c8d4/example/goods')
+    this.$http.get('https://www.easy-mock.com/mock/5ca2c29464930718b239eb94/lm/vue-eleme-goods')
       .then(res => {
-        // console.log(res)
+        console.log(res)
         if (res.data.errno === 0) {
           this.goods = res.data.data
           this.$nextTick(() => { //页面渲染完成才能执行

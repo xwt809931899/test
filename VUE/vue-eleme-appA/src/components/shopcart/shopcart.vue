@@ -63,8 +63,8 @@ export default {
       default () {
         return [
           {
-            price: 20,
-            count: 3    
+            price: 10,
+            count: 1
           }
         ]
       }
@@ -80,30 +80,7 @@ export default {
   },
   data () {
     return {
-      // totalPrice,
-      // totalCount,
       balls: [
-        {
-          show: false
-        },
-        {
-          show: false
-        },
-        {
-          show: false
-        },
-        {
-          show: false
-        },
-        {
-          show: false
-        },
-        {
-          show: false
-        },
-        {
-          show: false
-        },
         {
           show: false
         },
@@ -125,19 +102,12 @@ export default {
     }
   },
   computed: {
-    totalCount () {
-      let count = 0
-      this.selectFoods.forEach((food) => {
-        count += food.count
-      })
-      return count
-    },
     totalPrice () {
-      let price = 0
+      let total = 0
       this.selectFoods.forEach((food) => {
-        price += food.count * food.price
+        total += food.price * food.count
       })
-      return price
+      return total
     },
     payClass () {
       if (this.totalPrice < this.minPrice) {
@@ -145,6 +115,13 @@ export default {
       } else {
         return 'enough'
       }
+    },
+    totalCount () {
+      let count = 0
+      this.selectFoods.forEach((food) => {
+        count += food.count
+      })
+      return count
     },
     payDesc () {
       if (this.totalPrice === 0)  {
@@ -163,7 +140,7 @@ export default {
       }
       let show = !this.fold
       if (show) {
-        this.$nextTick(() => {  
+        this.$nextTick(() => {
           if (!this.scroll) {
             this.scroll = new BScroll(this.$refs.listContent, {
               click: true
@@ -177,37 +154,6 @@ export default {
     }
   },
   methods: {
-    toggleList () {},
-    beforeDrop (el) {
-      let count = this.balls.length
-      while(count--){
-        let ball = this.balls[count]
-        if(ball.show) {
-          let rect = ball.el.getBoundingClientRect()
-          let x = rect.left - 32
-          let y = -(window.innerHeight - rect.top -22)
-          el.style.display =''
-          el.style.webkitTransform = `translate3d(0,${y}px,0)`
-          el.style.transform = `translate3d(0,${y}px,0)`
-          let inner = el.getElmentsByClassName('inner-hook')[0]
-          el.style.webkitTransform = `translate3d(${x},0,0)`
-          el.style.transform = `translate3d(${x},0,0)`
-
-        }
-      }
-    },
-    dropping (el,done) {
-      let rf = el.offsetHeight  //获取dom结点高度
-      this.$nextTick(() => {
-          el.style.display =''
-          el.style.webkitTransform = `translate3d(0,0,0)`
-          el.style.transform = `translate3d(0,0,0)`
-          let inner = el.getElmentsByClassName('inner-hook')[0]
-          el.style.webkitTransform = `translate3d(0,0,0)`
-          el.style.transform = `translate3d(0,0,0)`
-          el.addEventListener('transitioned',done)
-      })
-    },
     drop (el) {
       for (let i = 0; i < this.balls.length; i++) {
         let ball = this.balls[i]
@@ -218,6 +164,35 @@ export default {
           return
         }
       }
+    },
+    toggleList () {},
+    beforeDrop (el) {
+      let count = this.balls.length
+      while (count--) {
+        let ball = this.balls[count]
+        if (ball.show) {
+          let rect = ball.el.getBoundingClientRect()
+          let x = rect.left - 32
+          let y = -(window.innerHeight - rect.top - 22)
+          el.style.display = ''
+          el.style.webkitTransform = `translate3d(0, ${y}px, 0)`
+          el.style.transform = `translate3d(0, ${y}px, 0)`
+          let inner = el.getElementsByClassName('inner-hook')[0]
+          inner.style.webkitTransform = `translate3d(${x}px, 0, 0)`
+          inner.style.transform = `translate3d(${x}px, 0, 0)`
+        }
+      }
+    },
+    dropping (el, done) {
+      let rf = el.offsetHeight
+      this.$nextTick(() => {
+        el.style.webkitTransform = `translate3d(0, 0, 0)`
+        el.style.transform = `translate3d(0, 0, 0)`
+        let inner = el.getElementsByClassName('inner-hook')[0]
+        inner.style.webkitTransform = `translate3d(0, 0, 0)`
+        inner.style.transform = `translate3d(0, 0, 0)`
+        el.addEventListener('transitionend', done)
+      })
     },
     afterDrop (el) {
       let ball = this.dropBalls.shift()
@@ -230,7 +205,7 @@ export default {
     hideList () {}
   }
 }
-</script>       
+</script>
 
 
 <style lang="stylus" rel="stylesheet/stylus">
@@ -404,4 +379,3 @@ export default {
       opacity: 0
       background: rgba(7, 17, 27, 0)
 </style>
-
