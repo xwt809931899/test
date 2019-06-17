@@ -20,6 +20,7 @@ export default {
     // 如果有多处要用到奇偶怎么办
     // evenOrOdd () {
     //   return this.$store.state.count % 2 === 0 ? 'even' : 'odd'
+    // main.js里配置了store选项，指定为store对象，会自动将store对象注入到所有子组件中，在子组件中通过this.$store就可以访问store对象
     // }
     mapGetters([
       'evenOrOdd'

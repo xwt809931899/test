@@ -16,11 +16,40 @@
     1:把某一类特定的异步函数转换为 promise 的方式调用
     2:const promiseReadfile = promisify(fs.readFile);
     promiseReadfile(path,{}).then(data => {})
-    
+    3:const promiseStat = promisify(fs.stat)
+    promiseStat('./aaa')
+    .then()
     */
     //node
     //fs.readFile(path,{}, (err,data) => {})
     //fs.stat(path, (err,data) => {})
+    const promisify = (func) => {
+        //promisify return 出去的函数
+        return (...args) => {
+            return new Promise ((resolve,reject) => {
+               func(...args,(err,result) => {
+                   if(err) {
+                       reject(err)
+                   }else{
+                       resolve(result)
+                   }
+               }) 
+            })
+        }
+    }
+    // 函数式编程里面 高阶函数 参数是函数 返回值也是函数
+    // 一层包裹一层
+    // 少
+    // const a = function () {}
+    // a()
+    // 坚持看 ok
+    const delay = promisify((time,cb) => {
+        setTimeout(cb,time)
+    })
+    delay(2000)
+    .then(res => {
+        console.log('hello')
+    })
     </script>
 </body>
 </html>

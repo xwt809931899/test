@@ -18,13 +18,13 @@
         // 生成时this指向window , 没有任何方式，是不算的  this是运行时决定
         console.log(this.value);
     }
-    //  bar();  //普通函数  主动追
+     bar();  //普通函数  主动追
     //  bar.call(foo)   //指定this指向foo 相亲
     //童养媳
     // bind 指定函数里的this绑定为foo,产生一个新函数，这个函数可以之后在运行的时候，this就是被绑的这个对象
     var bindFoo = bar.bind(foo);
     setTimeout(() => {
-        // bindFoo();
+        bindFoo();
     },2000)
 
     // document.body.addEventListener('click',function () {
@@ -33,8 +33,8 @@
     // 1. 事件函数内部 this 会是事件发生的对象
     // 2. 事件时异步的
     // 3.bind
-    var bindWindowOnload = bar.bind(foo);
-    window.onload = bindWindowOnload;
+    // var bindWindowOnload = bar.bind(foo);
+    // window.onload = bindWindowOnload;
 
    
 

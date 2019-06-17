@@ -11,12 +11,12 @@
     // 父类
     function Animal (species,age) {
 
-        console.log(arguments,'+++');
+        // console.log(arguments,'+++');
         this.species = '动物';
         this.age = age;
     }
     function Cat (species,age,name,color) {
-         console.log(arguments,'++');
+        //  console.log(arguments,'++');
          Animal.apply(this,arguments)  //这里的this是Cat的this apply实现了继承  
         // Animal.call(this, age,name,color);
         this.color = color;
@@ -25,14 +25,14 @@
     }
     var cat1 = new Cat('动物',3,'加菲猫','yelow');
     
-    // console.log(cat1.species);
-    // console.log(cat1.color);
-    // console.log(cat1.name);
-   
-    console.log(cat1.name);
-    console.log(cat1.color);
     console.log(cat1.species);
-    console.log(cat1.age);
+    console.log(cat1.color);
+    console.log(cat1.name);
+   
+    // console.log(cat1.name);
+    // console.log(cat1.color);
+    // console.log(cat1.species);
+    // console.log(cat1.age);
 
    
 

@@ -1,30 +1,3 @@
-# router
-
-> A Vue.js project
-
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+vue-routerde的三个基本概念
+    1.route 一条路由 2.routes 多条路由组成的一个数组 3.router 一个机制 用来管理路由
+客户端的路由,实际即使DOM元素的  显示或隐藏 实现的两种方法 1.hash 2.基于html5 history api
