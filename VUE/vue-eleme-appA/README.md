@@ -19,3 +19,8 @@ npm run build --report
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+/ https://mengzhaofly.github.io/static/xxx.js   错误的
+./ https://mengzhaofly.github.io/static/dist/#/static/xxx.js
+
+

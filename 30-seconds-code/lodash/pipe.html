@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://cdn.bootcss.com/underscore.js/1.9.1/underscore-min.js"></script>
+    <script>
+    //string:
+    //1. 转为小写
+    //2. 拼接一个字符串
+    //3. split 为一个数组
+    const lowCase = (str) => str.toLowerCase();    //分别对应1，2，3
+    const add = str => `${str} hello world`
+    const splitStr = str => str.split(' ')
+    
+    const combineFun = _.compose(splitStr,add,lowCase)
+    // console.log(combineFun('HEXO'))
+    //函数式编程
+    //组合
+    //管道
+    function pipe (...funs) {
+        return funs.reduce((pre,next) => {
+            // lowCase add add(lowCase())
+            //add(lowCase()) spltStr  splitStr(add(lowCase()))
+            //pipeFun === splitStr(add(lowCase())) 
+
+            return (...args) => next(pre(...args))
+        })
+    }
+    function compose(...fns){
+        return fns.reduce((pre,next) => {
+            return (...args) => pre(next(...args))
+        })
+    }
+    // function pipe (...funs) {
+    //     return () => {
+
+    //     }
+    // }
+    const pipeFun = pipe(lowCase,add,splitStr)
+    // console.log(pipeFun('HEXO'))
+    console.log(compose('HEXO'))
+    //['hexo','hello','world']
+    </script>
+
+</body>
+</html>
