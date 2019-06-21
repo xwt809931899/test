@@ -9,38 +9,38 @@
             </div>
             <div class="menu">
                 <ul>
-                    <li>
-                        <router-link to="/user" @click="_hidebar">
+                    <li @click="_hidebar">
+                        <router-link to="/user">
                         <i class="icon">&#xe63c;</i>
                         <span>个人中心</span>
                         </router-link>
                     </li>
-                    <li>
-                        <router-link to="" @click="_hidebar">
+                    <li @click="_hidebar">
+                        <router-link to="">
                         <i class="icon">&#xe631;</i>
                         <span>音效调整</span>
                         </router-link>
                     </li>
-                    <li>
-                        <router-link to="" @click="_hidebar">
+                    <li @click="_hidebar">
+                        <router-link to="">
                         <i class="icon">&#xe65b;</i>
                         <span>定时关闭</span>
                         </router-link>
-                    </li>
-                        <li>
-                        <router-link to="/user" @click="_hidebar">
+                    </li >
+                        <li @click="_hidebar">
+                        <router-link to="/user">
                         <i class="icon">&#xe601;</i>
                         <span>听歌识曲</span>
                         </router-link>
                     </li>
-                        <li>
-                        <router-link to="" @click="_hidebar">
+                        <li @click="_hidebar">
+                        <router-link to="">
                         <i class="icon">&#xe600;</i>
                         <span>帮助</span>
                         </router-link>
                     </li>
-                    <li>
-                        <router-link to="" @click="_hidebar">
+                    <li @click="_hidebar">
+                        <router-link to="">
                         <i class="icon">&#xe61f;</i>
                         <span>设置</span>
                         </router-link>
@@ -48,19 +48,28 @@
                 </ul>
             </div>
         </div>
+        <div v-show="showSidebar" class="sidebar_mask" @click="_hidebar"></div>
     </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'    //mapGetters可以把getters里的东西全部解构出来
 export default {
     data () {
         return {
-            showSidebar:true
         }
+    },
+    computed:{
+        ...mapGetters([
+            "showSidebar"          //拿到了showSidebar这条数据
+        ])
     },
     methods:{
         _hidebar () {
-
+            this.$store.dispatch('setShowSidebar',false)                                //这里能用是因为在main.js里引入了store并且在Vue的实例上挂载了store所以能使用 dispatch 调用actions里的方法
+        },
+        _show () {
+            this.$store.dispatch('setShowSidebar',true)
         }
     }
 }
