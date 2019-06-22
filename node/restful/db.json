@@ -1,0 +1,20 @@
+{
+    "posts":[
+        {
+            "id":1,
+            "title":"啊啊啊啊啊啊啊",
+            "author":"typicode"
+
+        }
+    ],
+    "comments":[
+        {
+            "id":1,
+            "body":"啊啊啊啊啊",
+            "postId":1
+        }
+    ],
+    "profile":{
+        "name":"typicode"
+    }
+}

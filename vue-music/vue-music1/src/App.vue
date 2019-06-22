@@ -27,6 +27,7 @@ import sidebar from '@/components/sidebar'
 import play from '@/components/play'
 
 
+
 export default {
   name: 'App',
   components:{
