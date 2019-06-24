@@ -7,6 +7,7 @@
 </template>
 
 <script>
+import { debounce } from '@/common/util'
 export default {
     props:{
         placeholder:{
@@ -29,6 +30,11 @@ export default {
         blur () {
             this.$ref.query.blur()  //失去焦点
         }
+    },
+    created () {
+        this.$watch('query',debounce((newQuery) => {
+            this.$emit('query',newQuery)
+        }))
     }
 }
 </script>
