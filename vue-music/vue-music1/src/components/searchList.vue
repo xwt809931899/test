@@ -16,12 +16,12 @@ export default {
     props:{
           searches:{
               type:Array,
-              default:['许嵩','徐良','汪苏泷']
+              default:[]
           }
     },
     methods:{
-        selectItem () {
-
+        selectItem (item) {
+          this.$emit('select',item)
         }
     }
 }

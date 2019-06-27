@@ -2,7 +2,7 @@
     <div class="search">
         <div class="search-box-wrapper">
             <!-- 搜索框 -->
-            <v-search @query="onQueryChange"></v-search>
+            <v-search @query="onQueryChange" ref="searchBox"></v-search>
             <!-- 子组件抛出的方法 query -->
         </div>
         <div class="shortcut-wrapper" ref="shortcutWrapper" v-show="!query">
@@ -26,7 +26,7 @@
                             </span>
                         </h1>
                         <!-- 搜索历史列表 -->
-                        <v-searchList></v-searchList>
+                        <v-searchList :searches="searchHistory" @select="addQuery"></v-searchList>
                     </div>
                 </div>
             </v-scroll>
@@ -34,7 +34,7 @@
         </div>
         <!-- 搜索结果 -->
         <div class="search-result" v-show="query" ref="searchResult">
-            <v-suggest :query="query"></v-suggest>
+            <v-suggest :query="query" @listScroll="blurInput" @select="saveSearch" ref="suggest"></v-suggest>
         </div>
     </div>
 </template>
@@ -44,6 +44,9 @@ import searchBox from '@/components/searchBox'
 import scroll from '@/components/scroll'
 import searchList from '@/components/searchList'
 import suggest from '@/components/suggest'
+import api from '@/api'
+import { mapGetters } from 'vuex'
+import { searchMixin } from '@/common/mixin.js'
 
 export default {
     components:{
@@ -52,46 +55,37 @@ export default {
         "v-searchList":searchList,
         "v-suggest":suggest
     },
+    mixins:[searchMixin],     //mixins vue自带的  来扩展一个方法
     data () {
         return {
-            query:'',
-            hotKey:[
-                {
-                    first:'宿敌'
-                },
-                {
-                    first:'素颜'
-                },
-                {
-                    first:'犯贱'
-                },
-                {
-                    first:'不分手的恋爱'
-                },
-                {
-                    first:'苦笑'
-                }
-            ],
-            searchHistory:[{}]
+            
+            hotKey:[]
         }
     },
     methods:{
         showConfirm () {
 
         },
-        onQueryChange (query) {
-            this.query = query
-            // console.log(query)
-        }
+        _getHotKey () {
+            api.HotSearchKey().then((res) => {
+                if(res.code === 200) {
+                    this.hotKey = res.result.hots.slice(0,10)
+                }
+            })
+        },
+    },
+    created () {
+        this._getHotKey()
+        
     },
     computed:{
         shortcut () {
 
         },
-        refreshDelay () {
-
-        }
-    } 
+        
+        
+            
+    }
 }
 </script>
 

@@ -35,6 +35,7 @@
 <view class='num'><text>{{item.num}}</text></view>
 </view>
 </view>
+<view class='assit'><text>显示全部{{}}节课</text></view>
 <view class='bottom-content'>
 <view class='flex1'>
 <view class='shouye'>

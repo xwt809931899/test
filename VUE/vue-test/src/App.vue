@@ -17,18 +17,16 @@
 </ul>
 </div>
 <sidebar></sidebar>
-<!-- <home></home> -->
 <router-view></router-view>
 </div>
 </template>
 
 <script>
 import sidebar from '@/components/sidebar'
-// import home from '@/components/home'
+
 export default {
   components:{
     sidebar,
-    // home
   }
 }
 </script>

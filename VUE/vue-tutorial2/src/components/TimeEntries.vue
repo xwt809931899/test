@@ -19,7 +19,7 @@
       <p v-if="!plans.length"><strong>还没有任何计划</strong></p>
 
       <div class="list-group">
-        <a class="list-group-item" v-for="(plan,index) in plans">
+        <a class="list-group-item" v-for="(plan,index) in plans" :key="index">
           <div class="row">
             <div class="col-sm-2 user-details">
               <img :src="plan.avatar" class="avatar img-circle img-responsive" />

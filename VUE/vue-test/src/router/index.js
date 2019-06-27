@@ -23,10 +23,11 @@ export default new Router({
       name:Create,
       component:Create,
       children:[{
-        path:'/formInformation',
+        path:'formInformation',
         name:FormInformation,
         component:FormInformation
-      }]
+      },
+    ] 
     }
 
   ]
