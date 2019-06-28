@@ -64,6 +64,13 @@ const actions = {
         let playHistory = state.playHistory.slice()
         playHistory = [...playHistory,song]
         commit(types.SAVE_PLAY_HISTORY,playHistory)
+    },
+    //保存喜欢列表
+    saveFavoriteList ({ commit,state},song) {
+        let favoriteList = state.favoriteList.slice()
+        favoriteList = [...favoriteList,song]
+        commit(types.SAVE_FAVORITE_LIST,favoriteList)
+
     }
 }
 

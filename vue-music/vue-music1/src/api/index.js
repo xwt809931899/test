@@ -60,5 +60,15 @@ export default {
   //热门搜索
   HotSearchKey () {
     return fetchGet('/search/hot')
+  },
+  MusicLyric (id) {
+    return fetchGet('/lyric',{
+      id
+    })
+  },
+  MusicUrl (id) {
+    return fetchGet('/song/url',{
+      id
+    })
   }
 }
