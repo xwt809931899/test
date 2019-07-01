@@ -26,21 +26,29 @@
   </div>
 </template>
 <script>
+// import { mapGetters } from 'vuex'
 export default {
   name:'FormInformation',
   data () {
     return {
-      data:'',
+      date:'',
       time:'',
       remark:''
     }
+  },
+  computed:{
   },
   methods:{
     cancel () {
       this.$router.push({path:'/time-entries'})
     },
     save () {
-      // this.$emit('createList')
+      const planList = {
+        date:this.date,
+        time:this.time,
+        remark:this.remark
+      }
+      this.$store.dispatch('createLists', planList)
     }
   }
 }

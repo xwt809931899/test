@@ -6,17 +6,18 @@
     <div class="createInformation" v-if="$route.path === '/time-entries/formInformation'">
       <h3>创建</h3>
     </div>
-    <router-view></router-view>
+    <router-view></router-view> 
+    
     <div
       class="noplan-list"
-      v-if="planLists.length === 0"
+      v-if="!planLists.length"
       :class="$route.path === '/time-entries/formInformation' ? 'another' : ''"
     >
       <p>
         <strong>还没有任何计划</strong>
       </p>
     </div>
-    <div class="plan-list" v-for="(plan,index) in planLists" :key="index" v-else :class="$route.path === '/time-entries/formInformation' ? 'another' : ''">
+    <div class="plan-list" v-for="(planList,index) in planLists" :key="index" v-else :class="$route.path === '/time-entries/formInformation' ? 'another' : ''">
       <div class="imageAndName">
         <div class="image">
           <img src="../images/pikapika.jpg" alt>
@@ -28,11 +29,11 @@
           <div class="image">
             <img src="../images/time.png" alt>
           </div>
-          <div class="time">{{plan.time}}</div>
-          <div class="date">{{plan.date}}</div>
+          <div class="time">{{planList.time}}</div>
+          <div class="date">{{planList.date}}</div>
         </div>
       </div>
-        <div class="remark">{{plan.remark}}</div>
+        <div class="remark">{{planList.remark}}</div>
         <div class="delete">
           <img src="../images/delete.png" alt>
         </div>
@@ -41,17 +42,23 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   data() {
     return {
-      planLists: [{}]
+       
     };
+  },
+  computed:{
+      ...mapGetters([
+      'planLists'
+    ])
   },
   methods: {
     create() {
       this.$router.push({ path: "/time-entries/formInformation" });
       console.log(this.$route.path);
-    }
+    },
   }
 };
 </script>
@@ -80,7 +87,7 @@ export default {
     left 427px
     width 850px
     border-top 1px solid #ccc
-  .another
+  .plan-list.another
     margin-top 212px
     display flex
     width 850px

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 关于call,bind,apply -->
+    <script>
+    var  a = {
+        user:'蜗牛',
+        fn:function (m,n) {
+            console.log(this.user)
+            console.log(m + n)
+        }
+    }
+    var b = a.fn
+    //b.call(a,5) 第一个参数一定是this作用域要去到的地方
+    // b.apply()
+    var c = b.bind(a,5)
+    c(3,4)
+    //参数按顺序一一对应
+    
+
+    </script>
+</body>
+</html>
