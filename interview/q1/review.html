@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- new的实现原理 -->
+    <script>
+        var _new = function () {
+            let target = {};  //创建一个空对象，构造函数的this指向这个对象
+            let [constructor,...args] = [...arguments]  //创建参数
+            target.__proto__ = constructor.prototype  //这个对象被执行原型连接，target成为constructor的实例
+            let result = constructor.apply(target,args)
+            if(result && typeof(result) === 'object' || typeof(result) === 'function'){
+                return result
+            }
+            return target
+        }
+        
+    
+    </script>
+</body>
+</html>

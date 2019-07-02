@@ -1,0 +1,41 @@
+/* components/announcement.wxss */
+.content{
+  width:80%;
+  background-color: 		#F0FFFF;
+  border-radius:38rpx;
+  height:500rpx;
+  text-align: center;
+  margin: 40rpx auto;
+  box-shadow: 0px 7px 20px 4px gray;
+  justify-content:space-between;
+  /* padding: 20rpx; */
+  transition: .5s all;
+  position: relative;
+  padding-bottom:40rpx;  
+}
+.content.tohide{
+  display: none;
+}
+.image{
+  padding: 0 auto;
+  border-bottom: 1px solid #ccc;
+}
+.image image{
+  width: 100rpx;
+  height: 100rpx;
+}
+.announcement{
+  display: block;
+  margin-top: -10rpx;
+  font-size: 32rpx;
+}
+
+.text-content{
+  font-size: 30rpx;
+  align-items: center;
+  width: 100%;
+  padding-top: 57rpx; 
+}
+.text-content text{
+  color: black;
+}

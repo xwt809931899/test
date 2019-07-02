@@ -1,0 +1,12 @@
+<!--components/announcement.wxml-->
+  <view class='content {{todisappear ? "tohide" : "" }}'>
+    <view class='image'>
+      <view class='image_box'>
+        <image src='/images/announcement.png' />
+      </view>
+      <text class='announcement'>公告栏</text>
+    </view>
+    <view class='text-content'>
+      <text>{{addText}}</text>
+    </view>
+  </view>

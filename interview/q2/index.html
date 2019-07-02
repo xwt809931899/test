@@ -22,6 +22,19 @@
     var c = b.bind(a,5)
     c(3,4)
     //参数按顺序一一对应
+    //call方法实现原理
+    Function.prototype.call = function () {  //手动创建一个.call方法 自己拿来用的
+        let [thisArg,...args] = [...arguments]  //创建参数 [...arguments]是一堆参数
+        if (!thisArg) {
+            thisArg = typeof window === 'undefined' ? global : window
+        }
+        //this的指向是当前函数 func.call
+        thisArg.func = this
+        //执行函数
+        let result = thisArg.func(...args)
+        delete thisArg.func //thisArg上并没有func属性，因此需要移除
+        return result
+    }
     
 
     </script>

@@ -1,7 +1,7 @@
 <!-- 公告栏以及编辑 -->
 <view class='container' wx:if='{{has_openid}}'>
 
-  <view class='content {{todisappear ? "tohide" : "" }}'>
+  <!-- <view class='content {{todisappear ? "tohide" : "" }}'>
     <view class='image'>
       <view class='image_box'>
         <image src='../../images/announcement.png' />
@@ -11,7 +11,8 @@
     <view class='text-content'>
       <text>{{addText}}</text>
     </view>
-  </view>
+  </view> -->
+  <announcement></announcement>
 
   <view class='ask-view {{todisappear ? "dohide" : "" }}'>
     <form bindsubmit='sendQuestion'>
