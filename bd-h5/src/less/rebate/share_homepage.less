@@ -1,0 +1,40 @@
+@import "../common/_colors.less";
+@import "../common/_reset.less";
+@import "../common/_common.less";
+
+// clearfix
+.clearfix:after{
+  content: '';
+  display: table;
+  clear: both;
+}
+html,body{overflow: hidden;}
+html,body,.container{height: 100%;}
+footer{display: none;}
+@keyframes help-up {
+    0% {transform:rotate(180deg) translateY(-15px);opacity:0;}
+    50% {transform:rotate(180deg) translateY(0px);opacity:1;}
+    100% {transform:rotate(180deg) translateY(15px);opacity:0;}
+}
+
+.container{position:relative;background: @C1 url("../../img/rebate/bg_eshopcard.png");text-align: center;background-size: cover;
+    .share-bg{position: relative;height: 30%;}
+    .img{padding-top:25%;margin: 0 auto;width: 80px;height: 80px;
+        img{display: block;width: 80px;height: 80px;border-radius: 50%;}
+    }
+    .name,.text{line-height: 20px;margin: 3% 0;color: #ffffff;}
+    .name{font-size: @H3;margin: 10px 0;}
+    .text{font-size: @H4;}
+    .btn{margin-top: 30%;
+        a{display: inline-block;font-size: @H5;;color: #ffffff;line-height: 24px;padding: 6px 30px;border: 1px solid #ffffff;border-radius: 36px;}
+    }
+    .my-footer{position: absolute;width: 100%;height: auto;left: 0;bottom: 10%;
+        .info{img{vertical-align: top;width: 40%;}}
+        .tip{margin-top: 2%;}
+        .icon-tip{display: inline-block;width: 30px;height: 30px;background: url("../../img/rebate/share_tip.png") no-repeat 50% 50%;background-size: 30px auto;animation: help-up 1s infinite linear}
+    }
+}
+
+
+
+

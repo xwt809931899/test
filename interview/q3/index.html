@@ -24,27 +24,34 @@
     let { foo:baz } = {foo:'abc'}  //对象的解构允许给赋值的对象重命名，此时foo不存在了，改为叫baz
     console.log(baz)
     </script> -->
-    <!-- <script>
+    <script>
         //浅拷贝
-        let obj = {
+            let obj = {
             name:'徐文韬',
             age:21,
             like:['sing','jump','rap']
         }
+            let obj4 = {
+            name:'邵嘉云',
+            age:22,
+            like:['read','movie','book']
+        }
+
+
         
         let obj2 = Object.assign({},obj)  //assign对象拼接 第一个参数空对象，第二个参数就是想要复制的对象
-        // let obj3 = Object.assign(obj2,like)
-        let obj3 = {...obj}
-        obj.name = 'xwt'
-        obj.like.push('篮球')
+        let obj3 = Object.assign({},obj2,obj4)
+        // let obj3 = {...obj}
+        // obj.name = 'xwt'
+        // obj.like.push('篮球')
         // obj3.name = 'tt'
-        console.log(obj)
+        console.log(obj3)
 
         //深拷贝
         // let obj4 = JSON.parse(JSON.stringify(obj))
         // obj.name = 'tt'
         // console.log(obj4)
-    </script> -->
+    </script>
     <script>
     // 深拷贝的原理
     function deepClone (obj,hash = new WeakMap) { //递归拷贝

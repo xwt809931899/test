@@ -1,0 +1,187 @@
+@import "../common/_reset.less";
+@import "../common/_common.less";
+@import "_common.less";
+
+.container {
+  background-color: #eee;
+
+  //.tab {
+  //  background-color: #fff;
+  //  //border-bottom: 1px solid #ccc;
+  //
+  //  overflow: hidden;
+  //  *zoom: 1;
+  //
+  //  //li {
+  //  //  float: left;
+  //  //  width: 25%;
+  //  //
+  //  //  a {
+  //  //    position: relative;
+  //  //    display: block;
+  //  //    color: #ced2db;
+  //  //    text-align: center;
+  //  //    padding: 15px 0;
+  //  //    &.has-msg {
+  //  //      &:after {
+  //  //        content: ' ';
+  //  //        display: block;
+  //  //        position: absolute;
+  //  //        width: 8px;
+  //  //        height: 8px;
+  //  //        border: 2px solid #FFFFFF;
+  //  //        background-color: #E00505;
+  //  //        border-radius: 50%;
+  //  //        top: 10px;
+  //  //        right: 5px;
+  //  //      }
+  //  //
+  //  //    }
+  //  //  }
+  //  //
+  //  //  &.active {
+  //  //    a {
+  //  //      border-bottom: 2px solid #18191a;
+  //  //      color: #18191a;
+  //  //    }
+  //  //  }
+  //  //}
+  //
+  //}
+  .tab {
+    margin: 0 0 6px 0;
+    padding: 0;
+    background-color: #ffffff;
+    list-style: none;
+    font-size: 16px;
+    color: #18191a;
+    li {
+      flex: 1;
+      height: 48px;
+      line-height: 48px;
+      width: 48px;
+      text-align: center;
+      white-space: nowrap;
+      a {
+        display: inline-block;
+        height: 48px;
+        width: 63px;
+        color: #ced2db;
+      }
+      &.active {
+        a {
+          border-bottom: 2px solid #18191a; /*no*/
+          color: #18191a;
+        }
+      }
+    }
+  }
+  .list {
+    margin: 10px 0;
+
+    .item {
+      margin: 10px 0;
+      background-color: #fff;
+      color: #666;
+      //border-top: 1px solid #ced2db;
+      //border-bottom: 1px solid #ced2db;
+
+      .info {
+        padding: 10px;
+        border-bottom: 1px solid #ced2db;
+        position: relative;
+        > * {
+          &:first-child {
+            float: left;
+            img {
+              width: 80px;
+              height: 80px;
+            }
+          }
+          &:nth-child(2) {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            position: relative;
+            padding: 10px 10px 10px 10px;
+            z-index: 1;
+            .name {
+              flex: 1;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              display: -webkit-box;
+              -webkit-line-clamp: 2;
+              -webkit-box-orient: vertical;
+            }
+            .status {
+              margin-top: 10px;
+              display: none;
+            }
+            .num-price {
+              padding-top: 10px;
+              color: #18191a;
+            }
+          }
+
+        }
+        .group-status-img {
+          position: absolute;
+          right: 10px;
+          bottom: 0;
+          > img {
+            display: none;
+            width: 81px;
+            height: 54px;
+          }
+          &.flag-ING { // 组团中
+            > img.buy_ing {
+              display: block !important;
+            }
+          }
+          &.flag-REFUNDED { // 组团失败完成退款
+            > img.buy_refunded {
+              display: block !important;
+            }
+          }
+          &.flag-FAILREFUND { // 组团失败退款中
+            > img.buy_refunding {
+              display: block !important;
+            }
+          }
+          &.flag-SUC { // 组团成功
+            > img.buy_succeed {
+              display: block !important;
+            }
+          }
+
+        }
+
+      }
+
+      .oper {
+        overflow: hidden;
+        *zoom: 1;
+
+        a {
+          float: left;
+          color: #787b7f;
+          width: 48%;
+          text-align: center;
+          line-height: 44px;
+          font-size: @H4;
+          &:first-child {
+            border-right: 1px solid #ced2db;
+          }
+        }
+      }
+
+    }
+
+  }
+  .empty {
+    line-height: 250px;
+    color: #999;
+    text-align: center;
+  }
+
+}

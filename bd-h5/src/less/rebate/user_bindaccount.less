@@ -1,0 +1,53 @@
+@import "../common/_reset.less";
+@import "../common/_common.less";
+@import "../common/_header.less";
+
+
+.iconsprite() {
+	background:url('../../img/iconsprite.png?@{version}') no-repeat;
+	background-size:69px auto;
+}
+
+// clearfix
+.clearfix:after{
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.container{
+	position: relative;
+
+	.banks{
+		margin:10px 0;
+		background-color:#fff;
+
+		ul{
+			li{
+				border-bottom:1px solid #f1f1f1;
+				a{
+					display:block;
+					line-height:30px;
+					.font-size(16);
+					padding:15px 10px;
+					overflow:hidden;
+					*zoom:1;
+
+					.icon{
+						float:left;
+						width:30px;
+						height:30px;
+						margin:0 20px 0 0;
+						img{
+							display:block;
+							width:100%;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+

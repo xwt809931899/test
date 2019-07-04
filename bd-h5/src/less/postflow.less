@@ -1,0 +1,155 @@
+@import "common/_reset.less";
+@import "common/_common.less";
+@import "common/_header.less";
+ 
+.container{
+	background-color:#eee;
+
+	.receiver{
+		padding:10px;
+		margin:10px 0;
+		background-color:#fff;
+
+		ul{
+			li{
+				margin:5px 0;
+				overflow:hidden;
+				*zoom:1;
+
+				label{
+					width:50%;
+					float:left;
+				}
+
+				div{
+					width:50%;
+					float:left;
+				}
+
+				&.address{
+					.font-size(12);
+					color:#666;
+				}
+			}
+		}
+	}
+
+	.product{
+		.item{
+			background-color:#fff;
+			color:#666;
+
+			dl{
+				padding:10px;
+				overflow:hidden;
+				*zoom:1;
+
+				dt{
+					float:left;
+					width:60px;
+
+					border:1px solid #d0ccc7;
+					border-radius:5px;
+
+					img{
+						width:100%;
+					}
+				}
+
+				dd{
+					position:relative;
+					padding:0 10px;
+					margin:0 0 0 70px;
+					height:60px;
+
+					.num{
+						position:absolute;
+						bottom:0;
+					}
+
+					.price{
+						position:absolute;
+						right:0;
+						bottom:0;
+					}
+				}
+			}
+
+			.total{
+				padding:10px;
+				border-top:1px solid #d0ccc7;
+				border-bottom:1px solid #d0ccc7;
+				overflow:hidden;
+				*zoom:1;
+
+				.num{
+					float:left;
+				}
+
+				.price{
+					float:right;
+					text-align:right;
+				}
+			}
+		}
+	}
+ 
+	.info{
+		margin:10px 0;
+		padding:10px;
+		background-color:#fff;
+		color:#999;
+	}
+
+	.postflow{
+		background-color:#fff;
+
+		h3{
+			padding:10px;
+			border-bottom:1px solid #ccc;
+			margin:0 0 10px 0;
+		}
+
+		ul{
+			padding:0 0 0 10px;
+
+			li{
+				position:relative;
+				overflow:hidden;
+				*zoom:1;
+
+				.icon{
+					position:absolute;
+					top:0;
+					left:5px;
+					display:block;
+					width:10px;
+					height:10px;
+					background:url('../img/app2/icon_yuan@2x.png') no-repeat;
+					background-size:100%;
+				}
+
+				.message{
+					margin:0 0 0 10px;
+					padding:0 20px 20px 30px;
+					line-height:25px;
+					color:#999;
+					border-left:1px solid #ccc;
+				}
+
+				&.current{
+					.icon{
+						left:3px;
+						width:15px;
+						height:15px;
+						background:url('../img/app2/icon_wz@2x.png') no-repeat;
+						background-size:100%;
+					}
+					.message{
+						color:#663300;
+					}
+				}
+			}
+		}
+	}
+}

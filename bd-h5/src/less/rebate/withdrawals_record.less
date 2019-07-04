@@ -1,0 +1,27 @@
+@import "../common/_reset.less";
+@import "../common/_common.less";
+@import "../common/_header.less";
+
+header{background-color: #ffffff;
+    .goback{position: relative;z-index: 9;}
+}
+.iconsprite() {background:url('../../img/iconsprite.png?@{version}') no-repeat;background-size:69px auto;}
+
+
+.container{position: relative;
+    .dis-table{display: table; width: 100%;}
+    .dis-table-cell{display: table-cell;padding:4px 0;vertical-align: top;}
+    .tl{text-align: left;}
+    .tr{text-align: right;}
+    .list{margin-top: 10px;padding: 0 8px;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;background-color: #ffffff;}
+    .item{padding: 6px 0;border-bottom: 1px solid #E5E5E5;
+        &:last-child{border-bottom: none;}
+        .type{color: #333333;.font-size(16);}
+        .money{color: #FD0100;.font-size(16);}
+        .date{color: #999999;.font-size(14);}
+        .status{color: #999999;.font-size(14);}
+    }
+}
+
+
+

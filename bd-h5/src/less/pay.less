@@ -1,0 +1,59 @@
+@import "common/_reset.less";
+@import "common/_common.less";
+@import "common/_header.less";
+
+.container{
+	background-color:#eee;
+
+	.paytype{
+		background-color:#fff;
+		padding:0 0 30px 0;
+
+		ul{
+			li{
+				cursor:pointer;
+				padding:20px 10px;
+				border-bottom:1px solid #eee;
+				overflow:hidden;
+				*zoom:1;
+
+				.checker{
+					float:left;
+					margin:2px 10px 0 0;
+					width:16px;
+					height:16px;
+					border:1px solid #ccc;
+					border-radius:50%;
+				}
+
+				&.checked{
+					color:#663300;
+					.checker{
+						width:18px;
+						height:18px;
+						background:url('../img/app2/icon_gx@2x.png') no-repeat;
+						background-size:100%;
+						border:none;
+					}
+				}
+			}
+		}
+
+		.oper{
+			text-align:center;
+
+			button{
+				display:block;
+				margin:30px auto;
+				width:200px;
+				.font-size(16);
+				text-align:center;
+				border:1px solid #6f3200;
+				background-color:#6f3200;
+				border-radius:5px;
+				color:#fff;
+				padding:10px 25px;
+			}
+		}
+	}
+}

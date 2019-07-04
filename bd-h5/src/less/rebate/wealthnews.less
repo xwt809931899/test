@@ -1,0 +1,50 @@
+@import "../common/__mixins.less";
+@import "../common/_reset.less";
+@import "../common/_common.less";
+@import "../common/_header.less";
+
+header{
+	background-color: #ffffff;
+	.goback{
+		background:url('../../img/iconsprite.png?@{version}') no-repeat 0 -75px;
+		background-size:69px auto;
+	}
+}
+.container{
+	position: relative;
+	overflow:hidden;
+	zoom:1;
+} 
+
+.wealth-news{
+	.news-item{
+		margin-top: 10px;
+		padding: 0 10px;
+		background-color: #FFFFFF;
+		&:first-child{
+			margin-top: 0;
+		}
+	}
+    .info,.show-detail{padding: 10px 0;}
+    .item-title{
+        .font-size(15);
+        line-height: 26px;
+        font-weight: bold;
+    }
+    .item-content {
+        color: @colorPrompt;
+    }
+    .show-detail {
+        position: relative;
+        display: block;
+        padding-right: 20px;
+        border-top: 1px solid #F0F0F0;
+        color: @colorPrompt;
+    }
+}
+
+
+	
+
+
+

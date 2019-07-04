@@ -1,0 +1,93 @@
+@import "px2rem.scss";
+@import "vars.scss";
+
+.al-btn {
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  background-image: none;
+  border: 1px solid transparent; /*px*/
+  border-radius: 0;
+  cursor: pointer;
+  outline: 0;
+  margin-bottom: 0;
+  padding: px2rem(15px) px2rem(20px);
+  transition: background-color .3s ease-out, border-color .3s ease-out;
+  line-height: inherit;
+  text-decoration: none;
+}
+
+.al-btn-primary {
+  color: #fff;
+  background-color: $BC1;
+  border-color: $BC1;
+}
+
+.al-btn-clear {
+  color: #fff;
+  background-color: $BC1;
+  border-color: $BC1;
+}
+
+.al-btn-big {
+  padding: px2rem(25px);
+  font-size: 1.2em;
+}
+
+.al-btn-block {
+  display: block;
+  width: 100%;
+}
+
+.al-btn-disabled {
+  background-color: #C3C3C3;
+  border-color: #C3C3C3;
+  pointer-events: none;
+}
+
+.al-btn-border-radius {
+  border-radius: px2rem(4);
+}
+
+.al-btn-primary-hollow {
+  background-color: transparent;
+  border-color: $BC3;
+  color: $BC3;
+}
+
+.al-btn-primary-rebate {
+  background-color: transparent;
+  border-color: $C3;
+  color: $C3;
+}
+
+.al-btn-grey-hollow {
+  background-color: transparent;
+  border-color: $C6;
+  color: $C6;
+}
+
+.al-btn-clear-hollow {
+  background-color: transparent;
+  border-color: $C3;
+  color: $C3;
+}
+
+.al-btn-white-hollow {
+  background-color: transparent;
+  border-color: #FFF;
+  color: #FFF;
+}
+
+.al-btn-fill { //填充按钮
+  background-color: $BC1;
+  height: 68px;
+  color: #ffffff;
+}
+
+.al-btn-line { //线性按钮
+  background-color: #ffffff;
+  height: 68px;
+  color: $BC1;
+  border: 1px solid $BC1;
+}

@@ -1,0 +1,117 @@
+@import "../common/_reset.less";
+@import "../common/_common.less";
+
+body {
+  background-color: #ffffff;
+}
+
+header {
+  position: relative;
+  border-bottom: 1px solid #e5e5e5; /*no*/
+  background-color: #ffffff;
+  overflow: hidden;
+  *zoom: 1;
+  a {
+    text-decoration: none;
+  }
+  .goback {
+    float: left;
+    width: 44px;
+    height: 44px;
+    background: url('../../img/iconsprite.png') no-repeat;
+    background-size: 69px auto;
+    background-position: 0 -75px;
+  }
+
+  h1 {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    color: #555;
+    font-size: 18px;
+    text-align: center;
+    height: 44px;
+    line-height: 44px;
+    pointer-events: none;
+    overflow: hidden;
+    .title {
+      margin: 0 50px;
+      font-size: 18px;
+    }
+  }
+  .home {
+    float: right;
+    width: 44px;
+    height: 44px;
+    background: url('../../img/iconsprite.png') no-repeat;
+    background-size: 69px auto;
+    background-position: 0 -26px;
+  }
+}
+
+.title1 {
+  color: @C4;
+  font-size: @H2;
+  font-weight: bold;
+  margin-top: 32px;
+}
+
+.title2 {
+  color: @C4;
+  font-size: @H2;
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+
+.margin-bottom12px{
+  margin-bottom: 12px;
+}
+.container {
+  padding-left: 32px;
+  padding-right: 32px;
+  .rule-wrap {
+    font-size: @H6;
+    color: @C6;
+    .content {
+      margin-top: 32px;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: @H6;
+      color: @C6;
+      margin-bottom: 12px;
+      line-height: 24px;
+    }
+    .example {
+      background-color: #eeeeee;
+      padding: 24px;
+      line-height: 24px;
+      .title ,.desc{
+        font-size: @H6;
+        color: @C4;
+        font-weight: bold;
+      }
+      .reword{
+        font-size: @H6;
+        color: #af1c40;
+      }
+
+    }
+    .diff{
+      font-size: @H7;
+      color: @C7;
+      line-height: 24px;
+    }
+    .pre-money,.cash,.question{
+      font-size: @H6;
+      color: @C6;
+      line-height: 24px;
+      .title1{
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+
+

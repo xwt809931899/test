@@ -1,0 +1,77 @@
+@import "~scss/px2rem.scss";
+@import "~scss/vars.scss";
+
+.pros {
+  margin: 0;
+  padding: 0;
+  > li {
+    padding: 30px;
+
+    > * {
+      img {
+        width: 160px;
+        height: 160px;
+        margin-right: 20px;
+        border: 1px solid $C8; /*no*/
+      }
+      &:nth-child(2) {
+        padding: 10px;
+        flex: 1;
+        position: relative;
+        p {
+          margin-top: 0;
+          font-size: $TH8;
+          color: $BC3;
+        }
+        .pro-price {
+          font-size: $TH5;
+          color: $BC1;
+          margin-right: 30px;
+        }
+        .price-num {
+          font-size: $TH8;
+          color: $BC5;
+        }
+
+      }
+    }
+    .pro-img {
+      position: relative;
+      .groupTag {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        left: 0;
+        top: 0;
+        border: none;
+      }
+    }
+
+  }
+}
+
+.btn-right {
+  padding-right: 20px;
+  .vip-comment {
+    text-align: right;
+    -webkit-box-flex: 1;
+    flex: 1;
+    line-height: $H4;
+    font-size: $H4;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  > * {
+    &:nth-child(2) {
+      text-align: right;
+      flex: 1;
+      line-height: $H4;
+      font-size: $H4;
+    }
+    &:nth-child(3) {
+      line-height: $H4;
+      font-size: $H4;
+      margin-left: 10px;
+    }
+  }
+}

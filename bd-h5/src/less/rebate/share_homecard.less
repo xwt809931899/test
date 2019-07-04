@@ -1,0 +1,162 @@
+@import "../common/_reset.less";
+@import "../common/_common.less";
+
+html, body {
+  background-color: #ffffff;
+  height: 100%;
+}
+
+header {
+  padding: 5px 10px;
+  overflow: hidden;
+  *zoom: 1;
+}
+
+header {
+  position: absolute;
+  z-index: 1;
+  .goback {
+    float: left;
+    width: 44px;
+    height: 44px;
+    background: url('../../img/app2/icon_fh@2x.png') center center no-repeat;
+    background-size: 32px 32px;
+    //
+    //background: url('../../img/iconsprite.png?20140414111122') no-repeat;
+    //background-size: 69px auto;
+    //background-position: 0 -75px;
+  }
+}
+
+.container {
+  height: 100%;
+  .logo {
+    position: relative;
+    width: 347px;
+    height: 372px;
+    margin: auto;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    .user-head {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      left: 150px;
+      bottom: 60px;
+      border-radius: 50%;
+    }
+  }
+  .desc {
+    font-size: @H4;
+    color: @C4;
+    width: 170px;
+    margin: auto;
+    text-align: center;
+    .prm {
+      color: #FE0002;
+    }
+  }
+}
+
+.foot {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 4;
+  button {
+    width: 100%;
+    height: 45px;
+    color: #ffffff;
+    background-color: #af1c40;
+    font-size: @H4;
+  }
+}
+
+//.container {
+//  position: relative;
+//  height: 100%;
+//  .top {
+//    position: relative;
+//    .bg {
+//      display: block;
+//      width: 100%;
+//    }
+//    .face {
+//      position: absolute;
+//      width: 100px;
+//      height: 100px;
+//      left: 50%;
+//      top: 42%;
+//      margin: -50px 0 0 -50px;
+//      img {
+//        display: block;
+//        width: 100%;
+//        height: 100%;
+//        border-radius: 50%;
+//      }
+//    }
+//    .account {
+//      margin-top: 8px;
+//      text-align: center;
+//      .font-size(16);
+//      font-weight: bold;
+//      color: #fff;
+//    }
+//    .login-btn {
+//      position: absolute;
+//      .font-size(14);
+//      background-color: #ffffff;
+//      border-radius: 3px;
+//      height: 35px;
+//      top: 50%;
+//      margin-top: -35/2px;
+//      left: 50%;
+//      margin-left: -40px;
+//      line-height: 35px;
+//      width: 80px;
+//      text-align: center;
+//      color: #6E3E10;
+//    }
+//  }
+//
+//  .share-info {
+//    margin-top: 8%;
+//    .text {
+//      padding: 0 50px;
+//      color: #333333;
+//      .font-size(15);
+//    }
+//    .prm {
+//      color: #FE0002;
+//    }
+//  }
+//  .btn-wrap {
+//    line-height: 20px;
+//    padding: 45px 0;
+//    background: url("../../img/rebate/icon_shareHomePageguide.png") no-repeat 5% 0;
+//    background-size: 48px auto;
+//    text-align: center;
+//    .btn {
+//      color: #663401;
+//      border: 1px solid #663401;
+//      padding: 5px 20px;
+//      border-radius: 25px;
+//      display: inline-block;
+//    }
+//  }
+//  .tip {
+//    padding: 0 50px;
+//    color: #999999;
+//    .font-size(12);
+//    position: absolute;
+//    bottom: 3%;
+//    line-height: 20px;
+//  }
+//}
+//
+//footer {
+//  display: none;
+//}

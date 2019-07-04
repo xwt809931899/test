@@ -1,0 +1,45 @@
+
+header{
+	position:relative;
+	border-bottom:1px solid #e5e5e5;
+	overflow:hidden;
+	*zoom:1;
+
+	a{
+		text-decoration:none;
+	}
+
+	.goback{
+		float:left;
+		width:44px;
+		height:44px;
+		.iconsprite();
+		background-position: 0 -75px;
+	}
+
+	h1{
+		position:absolute;
+		top:0;
+		width:100%;
+		color:#555;
+		.font-size(18);
+		text-align:center;
+		height:44px;
+		line-height:44px;
+		pointer-events: none;
+		overflow:hidden;
+
+		.title{
+			margin:0 50px;
+			.font-size(18);
+		}
+	}
+
+	.home{
+		float:right;
+		width:44px;
+		height:44px;
+		.iconsprite();
+		background-position: 0 -26px;
+	}
+}

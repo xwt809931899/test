@@ -1,0 +1,323 @@
+// 时间戳
+@version: "20140414111122";
+
+@max-width: 640px;
+@import "./_colors.less";
+@import "./_button.less";
+html, body {
+  background-color: #eeeeee;
+}
+
+.hide {
+  display: none !important;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+// 渐变
+.linear-gradient(@h:center, @v:top, @from:#fff, @to:#e4e4e4) {
+  background: -moz-linear-gradient(@h @v, @from, @to) repeat;
+  background: -webkit-gradient(linear, @h @v, @h bottom, from(@from), to(@to)) repeat;
+  background: -webkit-linear-gradient(@h @v, @from, @to) repeat;
+  background: -o-linear-gradient(@h @v, @from, @to) repeat;
+}
+
+//a
+a {
+  color: #000;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+
+  &:visited {
+    color: #000;
+  }
+
+  &:active {
+    outline: none;
+  }
+}
+
+// 分页组件
+.pager {
+  padding: 20px 0;
+  text-align: center;
+  .inner {
+    display: inline-block;
+    .font-size(12);
+    text-align: center;
+    overflow: hidden;
+    *zoom: 1;
+
+    a, span {
+      float: left;
+      padding: 10px 20px;
+      margin: 0 4px;
+      border: 1px solid #ccc;
+      background-color: #fff;
+    }
+
+    a {
+      color: #333;
+      text-decoration: none;
+      background-color: #efefef;
+    }
+
+    span {
+      i {
+        font-style: normal;
+      }
+    }
+  }
+}
+
+// 尾文件
+footer {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 20px 0 60px 0;
+  text-align: center;
+  .font-size(14);
+
+  a {
+    color: #333;
+    margin: 0 10px;
+  }
+
+  .copyright {
+    margin: 10px 0 0 0;
+    color: #999;
+  }
+}
+
+// loadlayer
+.j-ui-loadlayer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  opacity: 0.6;
+  z-index: 100000;
+
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -8px 0 0 -8px;
+  }
+}
+
+// loading
+.j-ui-loading {
+  padding: 10px;
+  text-align: center;
+
+  a {
+    color: #274f8a;
+    text-decoration: underline;
+  }
+}
+
+//内容块
+.container, header, nav {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  max-width: @max-width;
+  margin: 0 auto;
+}
+
+//icon
+.iconsprite() {
+  background: url('../img/iconsprite.png?@{version}') no-repeat;
+  background-size: 69px auto;
+}
+
+/* new addon */
+
+// clearfix
+.clearfix:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+// bottom bar
+.bottom-bar {
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 101;
+  .bb-wrap {
+    max-width: @max-width;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-top: 1px #dedde0 solid;
+  }
+  ul {
+    text-align: center;
+  }
+  li {
+    width: 20%;
+    float: left;
+    height: 57px;
+    padding: 4px 0 0 0;
+    position: relative;
+    a {
+      margin: 0;
+      padding: 0;
+      display: block;
+      height: 100%;
+      width: 100%;
+      background-repeat: no-repeat;
+      background-position: center top;
+      position: relative;
+      background-size: 48px;
+      background-position-y: 4px;
+    }
+    a.home {
+      background-image: url('../img/footicon/bt_com_menu_home_default.png');
+    }
+    a.dutyFree {
+      background-image: url('../img/footicon/bi_dutyFree.png');
+    }
+    a.directMail {
+      background-image: url('../img/footicon/bi_directMail.png');
+    }
+    a.category {
+      background-image: url('../img/footicon/bt_com_menu_category_default.png');
+    }
+    a.activity {
+      background-image: url('../img/footicon/bt_com_menu_event_default.png');
+    }
+    a.cart {
+      background-image: url('../img/footicon/bt_com_menu_cart_default.png');
+    }
+    a.me {
+      background-image: url('../img/footicon/bt_com_menu_user_default.png');
+    }
+    em {
+      font-style: normal;
+      .font-size(12);
+      position: absolute;
+      bottom: 7px;
+      left: 0;
+      display: none;
+      text-align: center;
+      width: 100%;
+      color: #ced2db;
+    }
+    i.icon-new {
+      display: none;
+      width: 6px;
+      height: 6px;
+      position: absolute;
+      top: 3%;
+      right: 28%;
+      background-color: red;
+      border-radius: 50%;
+      border: 2px solid #FFF;
+    }
+  }
+  li.active {
+    em {
+      color: #787b7f;
+    }
+    a.home {
+      background-image: url('../img/footicon/bt_com_menu_home_active.png');
+    }
+    a.dutyFree {
+      background-image: url('../img/footicon/bi_dutyFree_act.png');
+    }
+    a.directMail {
+      background-image: url('../img/footicon/bi_directMail_act.png');
+    }
+    a.category {
+      background-image: url('../img/footicon/bt_com_menu_category_active.png');
+    }
+    .activity {
+      background-image: url('../img/footicon/bt_com_menu_event_active.png');
+    }
+    a.cart {
+      background-image: url('../img/footicon/bt_com_menu_cart_active.png');
+    }
+    a.me {
+      background-image: url('../img/footicon/bt_com_menu_user_active.png');
+    }
+  }
+  li.hasNews {
+    i.icon-new {
+      display: block;
+    }
+  }
+}
+
+.search-bar {
+  position: fixed;
+  top: 14px;
+  left: 0;
+  width: 100%;
+  z-index: 9000;
+  .sb-wrap {
+    max-width: @max-width;
+    margin: 0 auto;
+    box-sizing: border-box;
+    a.search-btn {
+      display: block;
+      float: right;
+      width: 28px;
+      height: 28px;
+      margin-right: 18px;
+      background-image: url('../img/app2/icon_ss@2x.png');
+      background-position: center top;
+      background-size: 28px;
+      background-repeat: no-repeat;
+    }
+    a.rebate-btn {
+      display: block;
+      float: right;
+      width: 28px;
+      height: 28px;
+      margin-right: 18px;
+      background-image: url('../img/app2/icon_fl@2x.png');
+      background-position: center top;
+      background-size: 28px;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+.search-bar-float {
+  position: absolute;
+}
+
+.display-flex {
+  display: flex;
+}
+
+.position-fixed {
+  position: fixed !important;
+}
+
+.contain-p {
+  padding: 0 15px;
+}
+
+[v-cloak] {
+  display: none;
+}
+
+.nodata {
+  background: #fff;
+}
+
+.nodata p {
+  line-height: 190px;
+  text-align: center;
+  color: #cccccc;
+}

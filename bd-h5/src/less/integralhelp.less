@@ -1,0 +1,53 @@
+@import "common/_reset.less";
+@import "common/_common.less";
+@import "common/_header.less";
+
+.container{
+	padding:10px;
+
+	h3{
+		margin:10px 0;
+		padding:0 0 5px 0;
+		.font-size(14);
+		font-weight:bold;
+		border-bottom:1px dashed #ccc;
+	}
+
+	.content{
+		line-height:22px;
+		.font-size(12);
+
+		p{
+			.font-size(12);
+			margin:0 0 10px 0;
+		}
+
+		table{
+			width:100%;
+			thead{
+				th{
+					background-color:#efefef;
+					text-align:center;
+					.font-size(12);
+					border:1px solid #ccc;
+					padding:5px;
+				}
+			}
+			tbody{
+				td{
+					text-align:center;
+					.font-size(12);
+					border:1px solid #ccc;
+					padding:5px;
+				}
+			}
+		}
+	}
+
+	.special{
+		line-height:22px;
+		margin:20px 0;
+		.font-size(12);
+		color:#555;
+	}
+}

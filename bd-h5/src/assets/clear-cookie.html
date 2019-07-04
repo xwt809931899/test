@@ -1,0 +1,24 @@
+<script>
+
+
+    function clearCookie(name, domain) {
+        if (domain) {
+            document.cookie = name + "=123123;expires=Thu, 01 Jan 1970 00:00:00 GMT; domain=" + domain + ";path=/;";
+        } else {
+            document.cookie = name + "=123123;expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;";
+        }
+    }
+    var cookies = document.cookie.split(";");
+    for (var i = 0; i < cookies.length; i++) {
+        var name = cookies[i].split("=")[0];
+        clearCookie(name)
+        clearCookie(name, 'allpyra.com')
+        clearCookie(name, '.allpyra.com')
+        clearCookie(name, 'test.h5.allpyra.com')
+        clearCookie(name, '.test.h5.allpyra.com')
+        clearCookie(name, '.h5.allpyra.com')
+        clearCookie(name, '.m.allpyra.com')
+        clearCookie(name, 'm.allpyra.com')
+    }
+    alert('清除cookie成功')
+</script>

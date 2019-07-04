@@ -1,0 +1,90 @@
+@import "../common/__mixins.less";
+@import "../common/_reset.less";
+@import "../common/_common.less";
+@import "../common/_header.less";
+
+
+header{
+	position:relative;
+	height: 44px;
+	border-bottom:1px solid #e5e5e5;
+	background-color: #ffffff;
+	overflow:hidden;
+    .goback {
+        background: url('../../img/iconsprite.png?@{version}') no-repeat 0 -75px;
+        background-size: 69px auto;
+    }
+}
+
+.container{
+	position: relative;
+	overflow:hidden;
+	zoom:1;
+} 
+
+.option-group{
+	padding-top: 10px;
+	li:first-child{
+		border-top: 1px #eeeeee solid; 
+	}
+	li{
+		width: 100%;
+		border-bottom: 1px #eeeeee solid;
+		a{
+			display: block;
+            position: relative;
+			background-color: #ffffff;
+			line-height: 22px;
+			padding: 8px 10px 8px 75px;
+		}
+        .has-msg{
+            &:after{
+				content: ' ';
+				display: block;
+				position: absolute;
+				width: 8px;
+				height: 8px;
+				border: 2px solid #FFFFFF;
+				background-color: #E00505;
+				border-radius: 50%;
+				top: 4px;
+				left: 55px;
+            }
+        }
+		.news-title,.news-content{height: 22px;line-height: 22px;}
+		.news-title{
+            position: relative;
+			.font-size(15);
+		}
+        .news-time{
+            .font-size(13);
+            color: @colorPrompt;
+            position: absolute;
+            right: 0;
+            top:0;
+        }
+		.news-content{
+			.font-size(14);
+			color: @colorPrompt;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+		}
+	}
+	.system-msg{
+		background-image: url('../../img/rebate/ic_message_system.png');
+	}
+	.order-msg{
+		background-image: url('../../img/rebate/ic_message_oder.png');
+	}
+	.wealth-msg{
+		background-image: url('../../img/rebate/ic_message_wealth.png');
+	}
+	.opt-icon{
+		background-repeat: no-repeat;
+		background-size: 45px;
+		background-position: 18px 8px;
+	}
+}
+
+

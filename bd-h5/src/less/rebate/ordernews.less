@@ -1,0 +1,128 @@
+@import "../common/_reset.less";
+@import "../common/_common.less";
+
+header {
+  position: relative;
+  border-bottom: 1px solid #e5e5e5;
+  background-color: #ffffff;
+  overflow: hidden;
+  *zoom: 1;
+
+  a {
+    text-decoration: none;
+  }
+
+  .goback {
+    float: left;
+    width: 44px;
+    height: 44px;
+    background: url('../../img/iconsprite.png?@{version}') no-repeat;
+    background-size: 69px auto;
+    background-position: 0 -75px;
+  }
+
+  h1 {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    color: #555;
+    .font-size(18);
+    text-align: center;
+    height: 44px;
+    line-height: 44px;
+    pointer-events: none;
+    overflow: hidden;
+
+    .title {
+      margin: 0 50px;
+      .font-size(18);
+    }
+  }
+
+  .home {
+    float: right;
+    width: 44px;
+    height: 44px;
+    background: url('../../img/iconsprite.png?@{version}') no-repeat;
+    background-size: 69px auto;
+    background-position: 0 -26px;
+  }
+}
+
+.container {
+  position: relative;
+  overflow: hidden;
+  zoom: 1;
+}
+
+.rebate-group {
+  .list {
+    margin-top: 8px;
+    ul {
+      overflow: hidden;
+    }
+    li {
+      width: 100%;
+      background-color: #ffffff;
+      margin-bottom: 10px;
+      color: @C7;
+    }
+    .item-wrap {
+      padding: 10px 0;
+      position: relative;
+    }
+    i {
+      font-style: normal;
+    }
+    .thumbnail {
+      position: absolute;
+      top: 6px;
+      left: 6px;
+      width: 88px;
+      height: 88px;
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .details {
+      display: block;
+      position: relative;
+      padding: 2px 6px;
+      margin-left: 16px;
+      margin-right: 16px;
+      height: 100%;
+      position: relative;
+    }
+    .order, .income, .source {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      .font-size(13);
+    }
+    .date{
+      .font-size(10);
+      margin-bottom: 5px;
+    }
+    h3{
+      .font-size(15);
+    }
+
+    .gopro{
+      position: absolute;
+      bottom:0;
+      right:0;
+      color: @C2;
+    }
+    .visible-hidden{
+      visibility: hidden;
+    }
+  }
+}
+
+
+	
+
+
+

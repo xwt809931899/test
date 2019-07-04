@@ -1,0 +1,129 @@
+@import "../common/_reset.less";
+@import "../common/_common.less";
+@import "../common/_header.less";
+@import "../../assets/lib/css/default.css";
+
+.icon {
+  background: url('../../img/icons.png') no-repeat;
+  background-size: 199px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  vertical-align: top;
+
+  &.icon-weixin {
+    background-position: -177px -110px;
+  }
+}
+
+.container {
+  background-color: #eee;
+  .font-size(14);
+  a.changeheadimg {
+    display: block;
+    width: 72px;
+    margin: 0 auto;
+  }
+  .avateredit {
+    padding: 20px 0;
+    width: 100%;
+    .avater-wrap {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      overflow: hidden;
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    p {
+      padding-top: 8px;
+      text-align: center;
+      .font-size(12);
+      color: #666666;
+    }
+  }
+
+  .content {
+    background-color: #fff;
+    border-top: 1px solid #ececec;
+    border-bottom: 1px solid #ececec;
+
+    ul {
+      li {
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+        overflow: hidden;
+        *zoom: 1;
+
+        .font-size(14);
+        color: #333333;
+        line-height: 25px;
+
+        label {
+          border-right: 1px solid #ccc;
+          float: left;
+          text-align: center;
+          width: 72px;
+        }
+
+        input {
+          height: 25px;
+          padding: 0 16px;
+          float: left;
+          border: none;
+        }
+        input:disabled {
+          background-color: #fff;
+        }
+        select {
+          height: 25px;
+          padding: 0 16px;
+          float: left;
+          border: none;
+          color: #666;
+        }
+        em.txt {
+          padding: 0 16px;
+          font-weight: normal;
+          line-height: 25px;
+        }
+        button {
+          height: 25px;
+          border: none;
+          padding: 0 16px;
+          background-color: #fff;
+        }
+      }
+    }
+  }
+  .desc-wrap {
+    margin-top: 15px;
+    height: 45px;
+    background-color: #ffffff;
+    font-size: @H4;
+    color: @C4;
+    input {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  }
+
+  .button {
+    button {
+      display: block;
+      margin: 30px auto;
+      width: 200px;
+      .font-size(16);
+      text-align: center;
+      border: 1px solid #6f3200;
+      background-color: #6f3200;
+      border-radius: 5px;
+      color: #fff;
+      padding: 10px 25px;
+    }
+  }
+} 

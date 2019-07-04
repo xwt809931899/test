@@ -1,0 +1,141 @@
+@import "common/__mixins.less";
+@import "common/_reset.less";
+@import "common/_common.less";
+@import "common/_header.less";
+
+header{
+	border-bottom:1px solid #e5e5e5;
+	background-color: #ffffff;
+	overflow:hidden;
+}
+
+.container{
+	position: relative;
+	overflow:hidden;
+	zoom:1;
+} 
+
+.option-group{
+	padding-top: 10px;
+	li:first-child{
+		border-top: 1px #eeeeee solid; 
+	}
+	li{
+		width: 100%;
+		border-bottom: 1px #eeeeee solid;
+		a{
+			display: block;
+            position: relative;
+			background-color: #ffffff;
+			line-height: 22px;
+			padding: 8px 10px 8px 75px;
+		}
+        .has-msg{
+            &:after{
+                content: ' ';
+                display: block;
+                position: absolute;
+                width: 8px;
+                height: 8px;
+                border: 2px solid #FFFFFF;
+                background-color: #E00505;
+                border-radius: 50%;
+                top: 4px;
+                left: 55px;
+            }
+
+        }
+		.news-title,.news-content{height: 22px;line-height: 22px;}
+		.news-title{
+            position: relative;
+			.font-size(15);
+		}
+        .news-time{
+            .font-size(13);
+            color: @colorPrompt;
+            position: absolute;
+            right: 0;
+            top:0;
+        }
+		.news-content{
+			.font-size(14);
+			color: @colorPrompt;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+		}
+	}
+    .opt-icon{
+        background: #FFFFFF no-repeat 18px 8px;
+        background-size: 45px;
+    }
+	.logistic-msg{
+		background-image: url("../img/app2/ic_notice_logistics.png");
+	}
+	.coupon-msg{
+		background-image: url("../img/app2/ic_notice_myFortune.png");
+	}
+    .feedback-msg{
+		background-image: url('../img/app2/ic_notice_feedback.png');
+    }
+
+}
+.code {
+	position: absolute;
+	width: 100%;
+	top: 0;
+	z-index: 1;
+
+}
+
+.footer {
+	position: absolute;
+	width: 100%;
+	bottom: 25px;
+	.logo {
+		font-size: @H6;
+		color: #CCCCCC;
+	}
+
+	.logo:before {
+		content: '';
+		flex: 1;
+		display: block;
+		border-bottom: 1px solid #CCCCCC;
+		position: relative;
+		top: -10px;
+		margin-right: 20px;
+		height: 20px;
+
+	}
+
+	.logo:after {
+		content: '';
+		flex: 1;
+		display: block;
+		border-bottom: 1px solid #CCCCCC;
+		position: relative;
+		top: -10px;
+		margin-left: 20px;
+		height: 20px;
+	}
+
+	.en-name {
+		font-size: 9px;
+		color: #CCCCCC;
+		text-align: center;
+	}
+}
+
+// 因此udesk提供的入口
+#udesk_container{
+	display:none
+}
+
+.badge{
+	display: inline-block;
+	width: 6px;
+	height: 6px;
+	background: #f00;
+	border-radius: 50%;
+}

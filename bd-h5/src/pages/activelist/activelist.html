@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <title><%= _gConfig_.siteTitile%></title>     
+    <%= htmlWebpackPlugin.options.headerHTML %> 
+</head>
+<body>
+    <div id="app"></div>
+    <script type="text/javascript" src="<%=_gConfig_.CND_URL%>/assets/lib/js/underscore.min.js?v=20190505"></script>
+    <script type="text/javascript" src="<%=_gConfig_.CND_URL%>/assets/lib/js/zepto.min.js?v=20190505"></script>
+
+<script src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="<%=_gConfig_.PROJECT_USER%>/api/users/partake"></script>
+
+<link rel="stylesheet" href="<%=_gConfig_.CND_URL%>/assets/lib/css/swiper.3.3.1.min.css?v=20190505" />
+<script type="text/javascript" src="<%=_gConfig_.CND_URL%>/assets/lib/js/swiper.3.3.1.min.js?v=20190505"></script>
+    <%= htmlWebpackPlugin.options.commonTemplate %>
+
+</body>
+</html>

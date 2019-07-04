@@ -1,0 +1,45 @@
+@import "px2rem.scss";
+@import "vars.scss";
+
+.al-from {
+
+  .form-item {
+    border-bottom: 1px solid $C8; /*no*/
+    position: relative;
+    &.img-code img {
+      position: absolute;
+      right: 20px;
+      top: 10px;
+      height: 70px;
+    }
+    &.phone-code button {
+      display: inline-block;
+      position: absolute;
+      right: 20px;
+      top: 10px;
+      width: auto;
+      background: transparent;
+      color: $C3;
+      border: 0;
+      border-left: 1px solid $C8; /*no*/
+      &.al-btn-disabled {
+        color: $C7;
+      }
+    }
+
+    > input {
+      width: 100%;
+      line-height: 88px;
+      border: 0;
+      outline: none;
+      padding: 0 32px;
+      &[disabled] {
+        background: #fff;
+      }
+    }
+  }
+
+  .btn {
+    padding: 64px;
+  }
+}
