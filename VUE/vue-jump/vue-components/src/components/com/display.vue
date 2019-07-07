@@ -1,6 +1,5 @@
 <template>
     <div ref="display">
-        xwtxwtxwtxwtxwt
     </div>
 </template>
 <script>
@@ -38,7 +37,7 @@ export default {
         // source: .vue 文件代码，即props:code;
         //type:分割的部分，也就是 template script style
         getSource(source,type) {
-            const regex = new RegExp(`<${type}>[^>]*>`)
+            const regex = new RegExp(`<${type}[^>]*>`)
             let openingTag = source.match(regex)
             if(!openingTag) {
                 return ''
@@ -47,7 +46,7 @@ export default {
             }
             return source.slice(
                 source.indexOf(openingTag) + openingTag.length,
-                source.lastIndexOf(`<${type}>`)
+                source.lastIndexOf(`</${type}>`)
             )
         },
         splitCode () {
