@@ -25,4 +25,14 @@ A -> proxy -> google.com
 B -> proxy -> google.com
 
 ## iframe + postMessage
+1. 前端页面 通过 iframe 引入一个 后端目录下面的html,iframe 是不受同源策略限制的
+2. postMessage 用于在两个窗口间传递数据
+3. 前端页面通过postMessage 向 后端目录下的html传递接口需要的请求参数
+4. 后端页面 通过 postMessage 向前端页面传递接口结果
+
+## iframe + window.name
+iframe 共享 window.name
+
+## jsonp
+重要程度仅次于cors
 
