@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // function* test() {  //function 和 函数名 之间加了 * 让*和function连起来 就很想function函数
+    //   console.log(1)
+    //   let a = yield 1  //value为yield语句后面的返回值
+    //   console.log(a)
+    //   let b = yield 2  //yield 2 => 10 let b = 10
+    //   console.log(b)
+    //   let c = yield 3
+    //   console.log(c)
+    // }
+    // 惰性的 
+    // var g = test()
+    // let gn = g.next()
+
+    // 生成一个 对象 { next }
+    // 调用 next 一步一步执行
+    // g.next()
+    // g.next()
+    // g.next()
+
+    //让 generator函数自己全部执行完
+    // while(gn.done === false) {
+    //   gn = g.next(gn.value)
+    // }
+    // function* test1() {
+    //   let a = yield true
+    //   console.log('a',a)
+    //   let b = yield 1000
+    //   console.log('b',b)
+    // }
+    // function autoRun(generateFun) {
+    //   let g = generateFun()
+    //   let gn = g.next()
+    //   while(!gn.done) {
+    //     gn = g.next(gn.value)
+    //   }
+    // }
+    // autoRun1(test)
+    // autoRun1(test1)
+
+    // function autoRun1(generateFun) {
+    //   var g = generateFun()
+    //   function next(data) {
+    //     var result = g.next(data)
+    //     if(result.done) return
+    //     next(result.value)
+    //   }
+    //   next()
+    // }
+    let fooPromise = function () {
+      return new Promise((resolve,reject) => {
+        setTimeout(() => {
+          resolve('fooPromise')
+        },1000)
+      })
+    }
+    let barPromise = function () {
+      return new Promise((resolve,reject) => {
+        setTimeout(() => {
+          resolve('barPromise')
+        },2000)
+      })
+    }
+    _asyncToGenerator(
+      function* () {
+        let a = yield fooPromise();
+        console.log('_asyncToGenerator a',a)
+        let c = yield barPromise()
+        console.log('_asyncToGenerator c',c)
+        let b = yield 2;
+        console.log('_asyncToGenerator b',b)
+      }
+    )
+    function _asyncToGenerator (generateFun) {
+      return Promise((resolve,reject) => {      //async函数就是返回Promise
+        let gen = generateFun()
+        // key === next
+        let step = function (key,arg) {
+          let info = {}
+          //info = {value,done}
+          info = gen[key](arg)
+          if(info.done) {
+            resolve()
+          } else {
+            return Promise.resolve(info.value)  //用Promise.resolve可以确保返回的都是promise
+            .then((v) => {
+              return step('next',v)
+            })
+          }
+        }
+        step('next')
+      })
+    }
+  </script>
+</body>
+</html>
