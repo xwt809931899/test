@@ -60,3 +60,35 @@ var request = (options) => {
     throw error
   })
 }
+
+// http请求方式
+export const http = {}
+const methods = ['get','post','put','delete']
+methods.forEach(method => {
+  http[method] = (url,params = {}) => {
+    if(method === 'get') {
+      return request({url,params,method})
+    }
+    return request({url,body:stringify(params),method})
+  }
+})
+
+export default function plugin (Vue) {
+  if(plugin.installed) {
+    return 
+  }
+  plugin.installed = true
+  Object.defineProperties(Vue.prototype,{
+    $http:{
+      get() {
+        const obj = {
+          get:http['get'],
+          post:http['post'],
+          put:http['put'],
+          delete:http['delete']
+        }
+        return obj
+      }
+    }
+  })  //defineProperties 原生js自带 直接在一个对象上修改原有属性 或 新增属性，并返回最新的对象
+}
