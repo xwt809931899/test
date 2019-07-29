@@ -22,7 +22,7 @@ es6是相对于es5 ECMAScript 的第六次修订 也叫ES2015 随着babel webpac
   - SET es6新增的数据结构，类似数组。唯一的，没有重复的值
   - import export es6的模块化，es6原生支持的module,将js代码分割成不同的小块独立开发，一个文件一个类，一个独立的模块，比如说utils,api
   - ... 展开运算符
-  - 终于支持原生的class关键字了，js有了传统的面向对象的写法，支持extends 不过它只是语法糖，底层还是基于原型的面向面向对象
+  - 终于支持原生的class关键字了，js有了传统的面向对象的写法，支持extends 不过它只是语法糖，底层还是基于原型的面向对象
   - promise 为js提供了异步解决方案，回避了回调地狱(通过.then()) 代码的书写和执行是一样的
   - 更棒的异步解决方案 es7 的 async await
     koa就是基于async await 快速取代了express的江湖地位

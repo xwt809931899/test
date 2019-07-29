@@ -10,7 +10,7 @@ var data = {
 var pool = mysql.createPool({
   host: 'localhost',
   user: 'root',
-  password: 'xfwnxn1023',
+  password: '',
   database: 'trip'
 })
 // 开始请求
