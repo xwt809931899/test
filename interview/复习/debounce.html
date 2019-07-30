@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+    <div class="debounce">
+        <button id="submit">提交</button>
+    </div>
+  <script>
+    function test () {
+      console.log('提交成功')
+    }
+    const oDebounce = debounce(() => test(),3000)
+    // const oThrottle = throttle(() => test(),3000)
+        let oSubmit = document.getElementById('submit')
+        oSubmit.addEventListener('click',function () {
+           oDebounce()
+        })
+    function debounce(func,wait) {
+    let timeout;
+    return function () {
+        let context = this;
+        let args = arguments;
+
+        if (timeout) clearTimeout(timeout);
+
+        let callNow = !timeout;
+        timeout = setTimeout(() => {
+            timeout = null;
+        }, wait)
+
+        if (callNow) func.apply(context, args)
+    }
+}
+//     function throttle(func, delay) {
+//   let lastTime, timeout;
+//   return function() {
+//     let context = this;
+//     let args = arguments;
+//     let nowTime = +new Date();
+//     if (lastTime && nowTime < lastTime + delay) {
+//       timeout && clearTimeout(timeout);
+//       timeout = setTimeout(function(){
+//         lastTime = nowTime;
+//         func.apply(context, args);
+//       }, delay);
+//     } else {
+//       lastTime = nowTime;
+//       func.apply(context, args);
+//     }
+//   }
+// }
+  </script>
+</body>
+
+</html>

@@ -15,7 +15,7 @@
         function test () {
             console.log('提交成功')
         }
-        const oDebounce = debounce(() => test(),10000)
+        const oDebounce = debounce(() => test(),3000)
         let oSubmit = document.getElementById('submit')
         oSubmit.addEventListener('click',function () {
             oDebounce()
@@ -39,8 +39,8 @@
                     }else {
                         // 第一次执行
                         // 或者时间间隔超出设定的时间间隔，执行
-                            previous = now
-                            fn.apply(this,args)
+                        previous = now
+                        fn.apply(this,args) 
                     }
                 }  
             }

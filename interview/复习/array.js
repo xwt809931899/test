@@ -39,14 +39,14 @@ function uniq3 (arr) {
   let map = new Map()
   let result = new Array()
   for (let i = 0; i < arr.length; i++) {
-      // if () {
-      //      // map.set(arr[i],true)
-      // }
-      if(!map.has(arr[i])) {
-          map.set(arr[i],false)
-          result.push(...map)
+      if (map.has(arr[i])) {
+        map.set(arr[i],true)
+      }
+      else{
+        map.set(arr[i],false)
+        result.push(arr[i])
       }
   }
-  return result
+  return map
 }
 console.log(uniq3(arr))
