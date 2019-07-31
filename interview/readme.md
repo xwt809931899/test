@@ -41,7 +41,8 @@
 对于setTimeout() 里面是普通函数还是箭头函数的问题？
 setTimeout会延迟函数的声明？那么在函数里这个被延迟的函数定义在哪？
 问题1：function test() {
-    setTimeout(function() {console.log(this)},1000)  //window
+    let a = function() {console.log(this)}
+    setTimeout(a,1000)  //window
 }
 test() 执行后，1秒过后，这个匿名函数function(){console.log(this)},是在test() {
     function(){console.log(this)}
@@ -54,4 +55,4 @@ function(){
 问题2：function test1() {
     setTimeout(() => {console.log(this)})  //test1
 }
-能得出打印为test1是因为setTimeout里是箭头函数，那么它的this指向就是箭头函数所处的上下文环境，即定义它的函数test1。那么问题来了？这个箭头函数为什么是test1定义出来的？为什么不是setTimeout?是因为这个箭头函数是setTimeout的参数，也就类似于setTimeout的属性吗？所以要找箭头函数被定义的上下文就是找这个setTimeout的被定义的上下文test1吗？
+能得出打印为test1是因为setTimeout里是箭头函数，那么它的this指向就是箭头函数所处的上下文环境，即定义它的函数test1。那么问题来了？这个箭头函数为什么是test1定义出来的？为什么不是setTimeout?是因为这个箭头函数是setTimeout的参数，也就类似于setTimeo  ut的属性吗？(false)所以要找箭头函数被定义的上下文就是找这个setTimeout的被定义的上下文test1吗？
